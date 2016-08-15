@@ -9218,7 +9218,7 @@ return jQuery;
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
-// @version 0.7.16
+// @version 0.7.22
 (function() {
   window.WebComponents = window.WebComponents || {
     flags: {}
@@ -9563,6 +9563,7 @@ if (WebComponents.flags.shadow) {
         });
       });
     }
+    scope.addForwardingProperties = addForwardingProperties;
     scope.assert = assert;
     scope.constructorTable = constructorTable;
     scope.defineGetter = defineGetter;
@@ -10383,7 +10384,8 @@ if (WebComponents.flags.shadow) {
         Object.defineProperty(this, "defaultPrevented", {
           get: function() {
             return true;
-          }
+          },
+          configurable: true
         });
       };
     }
@@ -11981,7 +11983,7 @@ if (WebComponents.flags.shadow) {
         enumerable: true
       });
     }
-    [ "getBoundingClientRect", "getClientRects", "scrollIntoView" ].forEach(methodRequiresRendering);
+    [ "focus", "getBoundingClientRect", "getClientRects", "scrollIntoView" ].forEach(methodRequiresRendering);
     registerWrapper(OriginalHTMLElement, HTMLElement, document.createElement("b"));
     scope.wrappers.HTMLElement = HTMLElement;
     scope.getInnerHTML = getInnerHTML;
@@ -12516,6 +12518,7 @@ if (WebComponents.flags.shadow) {
   })(window.ShadowDOMPolyfill);
   (function(scope) {
     "use strict";
+    var addForwardingProperties = scope.addForwardingProperties;
     var mixin = scope.mixin;
     var registerWrapper = scope.registerWrapper;
     var setWrapper = scope.setWrapper;
@@ -12540,6 +12543,10 @@ if (WebComponents.flags.shadow) {
         unsafeUnwrap(this).texSubImage2D.apply(unsafeUnwrap(this), arguments);
       }
     });
+    var OriginalWebGLRenderingContextBase = Object.getPrototypeOf(OriginalWebGLRenderingContext.prototype);
+    if (OriginalWebGLRenderingContextBase !== Object.prototype) {
+      addForwardingProperties(OriginalWebGLRenderingContextBase, WebGLRenderingContext.prototype);
+    }
     var instanceProperties = /WebKit/.test(navigator.userAgent) ? {
       drawingBufferHeight: null,
       drawingBufferWidth: null
@@ -12583,6 +12590,7 @@ if (WebComponents.flags.shadow) {
     var setInnerHTML = scope.setInnerHTML;
     var unsafeUnwrap = scope.unsafeUnwrap;
     var unwrap = scope.unwrap;
+    var wrap = scope.wrap;
     var shadowHostTable = new WeakMap();
     var nextOlderShadowTreeTable = new WeakMap();
     function ShadowRoot(hostWrapper) {
@@ -12618,6 +12626,22 @@ if (WebComponents.flags.shadow) {
       },
       getSelection: function() {
         return document.getSelection();
+      },
+      get activeElement() {
+        var unwrappedActiveElement = unwrap(this).ownerDocument.activeElement;
+        if (!unwrappedActiveElement || !unwrappedActiveElement.nodeType) return null;
+        var activeElement = wrap(unwrappedActiveElement);
+        while (!this.contains(activeElement)) {
+          while (activeElement.parentNode) {
+            activeElement = activeElement.parentNode;
+          }
+          if (activeElement.host) {
+            activeElement = activeElement.host;
+          } else {
+            return null;
+          }
+        }
+        return activeElement;
       }
     });
     scope.wrappers.ShadowRoot = ShadowRoot;
@@ -13276,6 +13300,7 @@ if (WebComponents.flags.shadow) {
     var ShadowRoot = scope.wrappers.ShadowRoot;
     var TreeScope = scope.TreeScope;
     var cloneNode = scope.cloneNode;
+    var defineGetter = scope.defineGetter;
     var defineWrapGetter = scope.defineWrapGetter;
     var elementFromPoint = scope.elementFromPoint;
     var forwardMethodsToWrapper = scope.forwardMethodsToWrapper;
@@ -13299,6 +13324,22 @@ if (WebComponents.flags.shadow) {
     defineWrapGetter(Document, "documentElement");
     defineWrapGetter(Document, "body");
     defineWrapGetter(Document, "head");
+    defineGetter(Document, "activeElement", function() {
+      var unwrappedActiveElement = unwrap(this).activeElement;
+      if (!unwrappedActiveElement || !unwrappedActiveElement.nodeType) return null;
+      var activeElement = wrap(unwrappedActiveElement);
+      while (!this.contains(activeElement)) {
+        while (activeElement.parentNode) {
+          activeElement = activeElement.parentNode;
+        }
+        if (activeElement.host) {
+          activeElement = activeElement.host;
+        } else {
+          return null;
+        }
+      }
+      return activeElement;
+    });
     function wrapMethod(name) {
       var original = document[name];
       Document.prototype[name] = function() {
@@ -14981,7 +15022,8 @@ if (WebComponents.flags.shadow) {
       Object.defineProperty(this, "defaultPrevented", {
         get: function() {
           return true;
-        }
+        },
+        configurable: true
       });
     };
   }
@@ -15082,6 +15124,7 @@ window.HTMLImports = window.HTMLImports || {
     if (importCount) {
       for (var i = 0, imp; i < importCount && (imp = imports[i]); i++) {
         if (isImportLoaded(imp)) {
+          newImports.push(this);
           parsedCount++;
           checkDone();
         } else {
@@ -15533,7 +15576,7 @@ window.HTMLImports.addModule(function(scope) {
       if (doc && this._mayParse.indexOf(doc) < 0) {
         this._mayParse.push(doc);
         var nodes = doc.querySelectorAll(this.parseSelectorsForNode(doc));
-        for (var i = 0, l = nodes.length, p = 0, n; i < l && (n = nodes[i]); i++) {
+        for (var i = 0, l = nodes.length, n; i < l && (n = nodes[i]); i++) {
           if (!this.isParsed(n)) {
             if (this.hasResource(n)) {
               return nodeIsImport(n) ? this.nextToParseInDoc(n.__doc, n) : n;
@@ -16011,6 +16054,11 @@ window.CustomElements.addModule(function(scope) {
 window.CustomElements.addModule(function(scope) {
   var flags = scope.flags;
   function upgrade(node, isAttached) {
+    if (node.localName === "template") {
+      if (window.HTMLTemplateElement && HTMLTemplateElement.decorate) {
+        HTMLTemplateElement.decorate(node);
+      }
+    }
     if (!node.__upgraded__ && node.nodeType === Node.ELEMENT_NODE) {
       var is = node.getAttribute("is");
       var definition = scope.getRegisteredDefinition(node.localName) || scope.getRegisteredDefinition(is);
@@ -16093,6 +16141,9 @@ window.CustomElements.addModule(function(scope) {
       definition.prototype = Object.create(HTMLElement.prototype);
     }
     definition.__name = name.toLowerCase();
+    if (definition.extends) {
+      definition.extends = definition.extends.toLowerCase();
+    }
     definition.lifecycle = definition.lifecycle || {};
     definition.ancestry = ancestry(definition.extends);
     resolveTagName(definition);
@@ -16265,21 +16316,6 @@ window.CustomElements.addModule(function(scope) {
   }
   wrapDomMethodToForceUpgrade(Node.prototype, "cloneNode");
   wrapDomMethodToForceUpgrade(document, "importNode");
-  if (isIE) {
-    (function() {
-      var importNode = document.importNode;
-      document.importNode = function() {
-        var n = importNode.apply(document, arguments);
-        if (n.nodeType == n.DOCUMENT_FRAGMENT_NODE) {
-          var f = document.createDocumentFragment();
-          f.appendChild(n);
-          return f;
-        } else {
-          return n;
-        }
-      };
-    })();
-  }
   document.registerElement = register;
   document.createElement = createElement;
   document.createElementNS = createElementNS;
@@ -16379,3 +16415,131 @@ window.CustomElements.addModule(function(scope) {
 (function(scope) {
   window.Platform = scope;
 })(window.WebComponents);
+function MakePromise (asap) {
+  function Promise(fn) {
+		if (typeof this !== 'object' || typeof fn !== 'function') throw new TypeError();
+		this._state = null;
+		this._value = null;
+		this._deferreds = []
+
+		doResolve(fn, resolve.bind(this), reject.bind(this));
+	}
+
+	function handle(deferred) {
+		var me = this;
+		if (this._state === null) {
+			this._deferreds.push(deferred);
+			return
+		}
+		asap(function() {
+			var cb = me._state ? deferred.onFulfilled : deferred.onRejected
+			if (typeof cb !== 'function') {
+				(me._state ? deferred.resolve : deferred.reject)(me._value);
+				return;
+			}
+			var ret;
+			try {
+				ret = cb(me._value);
+			}
+			catch (e) {
+				deferred.reject(e);
+				return;
+			}
+			deferred.resolve(ret);
+		})
+	}
+
+	function resolve(newValue) {
+		try { //Promise Resolution Procedure: https://github.com/promises-aplus/promises-spec#the-promise-resolution-procedure
+			if (newValue === this) throw new TypeError();
+			if (newValue && (typeof newValue === 'object' || typeof newValue === 'function')) {
+				var then = newValue.then;
+				if (typeof then === 'function') {
+					doResolve(then.bind(newValue), resolve.bind(this), reject.bind(this));
+					return;
+				}
+			}
+			this._state = true;
+			this._value = newValue;
+			finale.call(this);
+		} catch (e) { reject.call(this, e); }
+	}
+
+	function reject(newValue) {
+		this._state = false;
+		this._value = newValue;
+		finale.call(this);
+	}
+
+	function finale() {
+		for (var i = 0, len = this._deferreds.length; i < len; i++) {
+			handle.call(this, this._deferreds[i]);
+		}
+		this._deferreds = null;
+	}
+
+	/**
+	 * Take a potentially misbehaving resolver function and make sure
+	 * onFulfilled and onRejected are only called once.
+	 *
+	 * Makes no guarantees about asynchrony.
+	 */
+	function doResolve(fn, onFulfilled, onRejected) {
+		var done = false;
+		try {
+			fn(function (value) {
+				if (done) return;
+				done = true;
+				onFulfilled(value);
+			}, function (reason) {
+				if (done) return;
+				done = true;
+				onRejected(reason);
+			})
+		} catch (ex) {
+			if (done) return;
+			done = true;
+			onRejected(ex);
+		}
+	}
+
+	Promise.prototype['catch'] = function (onRejected) {
+		return this.then(null, onRejected);
+	};
+
+	Promise.prototype.then = function(onFulfilled, onRejected) {
+		var me = this;
+		return new Promise(function(resolve, reject) {
+      handle.call(me, {
+        onFulfilled: onFulfilled,
+        onRejected: onRejected,
+        resolve: resolve,
+        reject: reject
+      });
+		})
+	};
+
+	Promise.resolve = function (value) {
+		if (value && typeof value === 'object' && value.constructor === Promise) {
+			return value;
+		}
+
+		return new Promise(function (resolve) {
+			resolve(value);
+		});
+	};
+
+	Promise.reject = function (value) {
+		return new Promise(function (resolve, reject) {
+			reject(value);
+		});
+	};
+
+	
+  return Promise;
+}
+
+if (typeof module !== 'undefined') {
+  module.exports = MakePromise;
+}
+
