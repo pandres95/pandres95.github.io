@@ -35,7 +35,7 @@
     "gulp-clean": "^0.3.1",
     "gulp-concat": "^2.6.0",
     "gulp-flatten": "^0.2.0",
-    "gulp-folder-load": "^1.0.2",
+    "gulp-folder-load": "^1.2.0",
     "gulp-if": "^2.0.0",
     "gulp-inject": "^3.0.0",
     "gulp-minify": "0.0.5",
