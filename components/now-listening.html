@@ -1,0 +1,65 @@
+<link rel="import" href="../lib/iron-ajax/iron-ajax.html">
+
+<dom-module id="now-listening">
+    <style>
+    .now-listening-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 1.5em;
+    }
+
+    .now-listening-icon {
+        max-width: 1em;
+        padding: 0 1em 0 0;
+        width: 10%;
+        margin: 0.5em;
+    }
+
+    .now-listening-info {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .now-listening--artist {
+        font-weight: 500;
+    }
+    </style>
+    <template>
+        <iron-ajax id="ajax"
+            auto
+            url="/api/lastfm/latest"
+            last-response="{{response}}"
+            on-response="_onResponse"
+            handleAs="json">
+        </iron-ajax>
+        <template is="dom-if" if="[[response.success]]">
+            <a class="now-listening-container" target="_blank" href="[[response.data.url]]">
+                <aside class="now-listening-icon--song">
+                    <template is="dom-if" if="[[response.data.playing]]">
+                        <i class="fa fa-play">
+                    </template>
+                    <template is="dom-if" if="[[!response.data.playing]]">
+                        <i class="fa fa-pause">
+                    </template>
+                </aside>
+                <section class="now-listening-info">
+                    <p class="now-listening--artist">[[response.data.artist]]</p>
+                    <p class="now-listening--title">[[response.data.title]]</p>
+                </section>
+            </a>
+        </template>
+    </template>
+    <script>
+        Polymer({
+            is: 'now-listening',
+            _updateData: function() {
+                this.async(function() {
+                    this.$.ajax.generateRequest();
+                }, 30000);
+            },
+            _onResponse: function() { this._updateData(); }
+        });
+    </script>
+</dom-module>
