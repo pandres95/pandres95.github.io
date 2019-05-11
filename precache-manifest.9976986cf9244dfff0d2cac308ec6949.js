@@ -46,5 +46,9 @@ self.__precacheManifest = [
   {
     "revision": "e1ef52888121922c09f1dd2691d82e6f",
     "url": "/favicon.png"
+  },
+  {
+    "revision": "549f3ef6e3defeb828bc659c0161bdd0",
+    "url": "/CNAME"
   }
 ];
