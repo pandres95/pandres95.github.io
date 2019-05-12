@@ -9,7 +9,7 @@ import {
   faGithub,
   faGitlab
 } from '@fortawesome/free-brands-svg-icons'
-import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
+import { faCompactDisc } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import App from './App.vue'
@@ -19,7 +19,7 @@ import store from './store'
 import './registerServiceWorker'
 
 library.add(
-  faPlay, faPause,
+  faCompactDisc,
   faFacebookSquare, faTwitterSquare, faInstagram, faLinkedinIn,
   faGithub, faGitlab);
 Vue.component('font-awesome-icon', FontAwesomeIcon);

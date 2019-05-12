@@ -1,13 +1,13 @@
 <template>
-  <section class="music-player">
-    <span class="controls" v-if="playing !== undefined">
-      <font-awesome-icon :icon="controlIcon" />
+  <a :href="url" target="_blank" class="music-player">
+    <span class="controls" :class="playingClass" v-if="playing !== undefined">
+      <font-awesome-icon icon="compact-disc" />
     </span>
     <div class="info">
-      <p class="artist">{{ artist }}</p>
-      <p class="title">{{ title }}</p>
+      <p class="artist">{{ title }}</p>
+      <p class="title">{{ artist }}</p>
     </div>
-  </section>
+  </a>
 </template>
 
 <script>
@@ -35,10 +35,10 @@ export default {
     }
   },
   computed: {
-    controlIcon () {
+    playingClass () {
       return this.playing
-        ? 'play'
-        : 'pause';
+        ? 'playing'
+        : 'paused';
     }
   }
 }
@@ -56,7 +56,26 @@ p {
 }
 
 .controls {
-  margin-inline-end: 1em;
+  font-size: 1.4em;
+  line-height: 1em;
+  margin-inline-end: 0.6em;
+}
+
+@keyframes animation-playing {
+  0% { transform: rotateZ(0deg); }
+  25% { transform: rotateZ(90deg); }
+  50% { transform: rotateZ(180deg); }
+  75% { transform: rotateZ(270deg); }
+  99% { transform: rotateZ(359deg); }
+}
+
+.controls.playing svg {
+
+  transform: rotate(360deg);
+  animation-name: animation-playing;
+  animation-iteration-count: infinite;
+  animation-duration: 0.9s;
+  animation-timing-function: linear;
 }
 
 .info {
