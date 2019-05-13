@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VueAnalytics from 'vue-analytics'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -23,6 +24,11 @@ library.add(
   faFacebookSquare, faTwitterSquare, faInstagram, faLinkedinIn,
   faGithub, faGitlab);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
+
+Vue.use(VueAnalytics, {
+  id: 'UA-106396384-1',
+  checkDuplicatedScript: true
+});
 
 Vue.config.productionTip = false;
 
