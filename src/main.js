@@ -27,7 +27,8 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.use(VueAnalytics, {
   id: 'UA-106396384-2',
-  checkDuplicatedScript: true
+  checkDuplicatedScript: true,
+  router
 });
 
 Vue.config.productionTip = false;
