@@ -57,6 +57,7 @@ nav {
   grid-template-columns: max-content auto max-content max-content;
   grid-column-gap: 1.15em;
   box-sizing: border-box;
+  font-family: 'Helvetica Neue LT Std', Helvetica, Arial, sans-serif;
 
   padding: 30px;
   width: 100%;
@@ -67,12 +68,8 @@ span {
 }
 
 .full-floating {
-  background:
-    linear-gradient(rgba(24, 24, 24, 0.78), rgba(24, 24, 24, 0.78)),
-    url("../assets/img/background.png"),
-    linear-gradient(rgba(24, 24, 24, 1), rgba(24, 24, 24, 1));
-  background-blend-mode: hard-light;
-  background-size: cover;
+  background: var(--color-primary);
+  z-index: 1;
 }
 
 .info {
@@ -151,10 +148,8 @@ a.router-link-exact-active {
 
 @media (max-width: 720px) {
   .floating {
-    background: linear-gradient(rgba(24, 24, 24, 0.7), rgba(24, 24, 24, 0.7)),
-      url("../assets/img/background.jpg");
-    background-blend-mode: hard-light;
-    background-size: cover;
+    background: var(--color-primary);
+    z-index: 1;
   }
 
   .info .headings h1 {
