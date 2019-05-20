@@ -56,8 +56,8 @@ self.__precacheManifest = [
     "url": "/font/Cormorant-Italic.woff2"
   },
   {
-    "revision": "f1cc803af81eef3e4c45",
-    "url": "/js/app.6c61e8f3.js"
+    "revision": "57f8f54068ed8bd11ff6",
+    "url": "/js/app.61475a40.js"
   },
   {
     "url": "/font/Cormorant-Italic.ttf"
@@ -99,7 +99,7 @@ self.__precacheManifest = [
     "url": "/img/papernote.95f1f9c0.png"
   },
   {
-    "revision": "cd9cdfeb3af1a85ea521fb357602a014",
+    "revision": "4f9d724dc2eee8672d635f6f02b5a443",
     "url": "/index.html"
   },
   {
@@ -119,7 +119,7 @@ self.__precacheManifest = [
     "url": "/sitemap.xsl"
   },
   {
-    "revision": "f1cc803af81eef3e4c45",
-    "url": "/css/app.bbb58a17.css"
+    "revision": "57f8f54068ed8bd11ff6",
+    "url": "/css/app.fa1380c9.css"
   }
 ];
