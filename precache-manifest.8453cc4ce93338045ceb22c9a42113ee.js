@@ -56,8 +56,8 @@ self.__precacheManifest = [
     "url": "/font/Cormorant-Italic.woff2"
   },
   {
-    "revision": "016143ad7e5549e6d245",
-    "url": "/js/app.66e0955d.js"
+    "revision": "82b5e2596dc12637be7a",
+    "url": "/js/app.fe295ec8.js"
   },
   {
     "url": "/font/Cormorant-Italic.ttf"
@@ -83,23 +83,23 @@ self.__precacheManifest = [
     "url": "/img/btn-scroll_down.6eae999e.svg"
   },
   {
-    "revision": "341b42ea3e0f150636c77616feb6b5ca",
-    "url": "/img/host.341b42ea.svg"
+    "revision": "6f6f7ef65cb7da9ebb1bdd01a425ada9",
+    "url": "/img/background.6f6f7ef6.png"
   },
   {
     "revision": "95f1f9c08a6540838b6cfeda9a7c8a95",
     "url": "/img/papernote.95f1f9c0.png"
   },
   {
+    "revision": "341b42ea3e0f150636c77616feb6b5ca",
+    "url": "/img/host.341b42ea.svg"
+  },
+  {
     "revision": "233a0d4d1f937ab24c4af003ac718cae",
     "url": "/img/sign.233a0d4d.svg"
   },
   {
-    "revision": "6f6f7ef65cb7da9ebb1bdd01a425ada9",
-    "url": "/img/background.6f6f7ef6.png"
-  },
-  {
-    "revision": "1a9678b24cfe5775252a1b3eb96b9da6",
+    "revision": "f6afd6b43331a7ffe9e8710391d5c54e",
     "url": "/index.html"
   },
   {
@@ -119,7 +119,7 @@ self.__precacheManifest = [
     "url": "/sitemap.xsl"
   },
   {
-    "revision": "016143ad7e5549e6d245",
-    "url": "/css/app.616a4061.css"
+    "revision": "82b5e2596dc12637be7a",
+    "url": "/css/app.88b8e8e6.css"
   }
 ];
