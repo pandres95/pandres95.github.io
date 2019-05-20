@@ -29,8 +29,6 @@ export default {
   },
   methods: {
     async fetchTalks () {
-      console.log('#fetchTalks');
-
       const uri = new URL('/blog/ghost/api/v2/content/posts', document.baseURI);
       uri.searchParams.append('key', '624142b2a43a89a02603ee1f55');
       uri.searchParams.append('filter', 'tag:talks');
@@ -40,7 +38,6 @@ export default {
       const response = await fetch(uri.toString());
       const { posts = [] } = await response.json();
 
-      console.log(posts);
       this.posts = posts;
     },
     renderDescription (description = '') {
