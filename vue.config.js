@@ -1,4 +1,5 @@
 const GoogleFontsPlugin = require('@beyonk/google-fonts-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   // options...
@@ -27,6 +28,17 @@ module.exports = {
           }
         ]
       })
-    ]
+    ],
+    optimization: {
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            compress: {
+              drop_console: true
+            }
+          }
+        })
+      ]
+    }
   }
 };
