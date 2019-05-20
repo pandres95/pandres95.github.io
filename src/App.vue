@@ -41,13 +41,17 @@ html {
 }
 
 body {
-  font-family: 'Helvetica Neue LT Std', Helvetica, Arial, sans-serif;
+  font-family: 'Cormorant', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: var(--color-primary);
 
   height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Helvetica Neue LT Std', Helvetica, Arial, sans-serif;
 }
 
 fragment {

@@ -21,7 +21,10 @@ module.exports = {
     plugins: [
       new GoogleFontsPlugin({
         fonts: [
-          { family: 'IM Fell DW Pica' }
+          {
+            family: 'Cormorant',
+            variants: [ '300', '300italic', '400', '400italic' ]
+          }
         ]
       })
     ]
