@@ -22,7 +22,7 @@ export default {
   mounted () {
     setInterval(() => {
       this.refresh();
-    }, 30000);
+    }, 15000);
 
     this.refresh();
   },
