@@ -56,8 +56,8 @@ self.__precacheManifest = [
     "url": "/font/Cormorant-Italic.woff2"
   },
   {
-    "revision": "c541c7b65d09703fc01c",
-    "url": "/js/app.1ae7a4b2.js"
+    "revision": "016143ad7e5549e6d245",
+    "url": "/js/app.66e0955d.js"
   },
   {
     "url": "/font/Cormorant-Italic.ttf"
@@ -99,7 +99,7 @@ self.__precacheManifest = [
     "url": "/img/background.6f6f7ef6.png"
   },
   {
-    "revision": "2bda06733968e40e6adcec0dd0f4e97b",
+    "revision": "1a9678b24cfe5775252a1b3eb96b9da6",
     "url": "/index.html"
   },
   {
@@ -119,7 +119,7 @@ self.__precacheManifest = [
     "url": "/sitemap.xsl"
   },
   {
-    "revision": "c541c7b65d09703fc01c",
+    "revision": "016143ad7e5549e6d245",
     "url": "/css/app.616a4061.css"
   }
 ];
