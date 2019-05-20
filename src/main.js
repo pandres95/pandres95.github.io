@@ -26,7 +26,7 @@ library.add(
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.use(VueAnalytics, {
-  id: 'UA-106396384-1',
+  id: 'UA-106396384-2',
   checkDuplicatedScript: true
 });
 
