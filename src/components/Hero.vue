@@ -5,22 +5,22 @@
       <h1>Pablo Andrés Dorado Suárez</h1>
       <h2>Development Researcher</h2>
       <nav class="social">
-        <a href="https://facebook.com/pandres95">
+        <a target="_blank" rel="noopener noreferrer" href="https://facebook.com/pandres95">
           <font-awesome-icon :icon="['fab', 'facebook-square']" />
         </a>
-        <a href="https://twitter.com/pandres95">
+        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/pandres95">
           <font-awesome-icon :icon="['fab', 'twitter-square']" />
         </a>
-        <a href="https://instagram.com/pandres95">
+        <a target="_blank" rel="noopener noreferrer" href="https://instagram.com/pandres95">
           <font-awesome-icon :icon="['fab', 'instagram']" />
         </a>
-        <a href="https://linkedin.com/in/pandres95">
+        <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/pandres95">
           <font-awesome-icon :icon="['fab', 'linkedin-in']" />
         </a>
-        <a href="https://github.com/pandres95">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/pandres95">
           <font-awesome-icon :icon="['fab', 'github']" />
         </a>
-        <a href="https://gitlab.com/pandres95">
+        <a target="_blank" rel="noopener noreferrer" href="https://gitlab.com/pandres95">
           <font-awesome-icon :icon="['fab', 'gitlab']" />
         </a>
       </nav>

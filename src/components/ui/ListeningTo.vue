@@ -1,5 +1,5 @@
 <template>
-  <a :href="url" target="_blank" class="music-player">
+  <a :href="url" target="_blank" rel="noopener noreferrer" class="music-player">
     <span class="controls" :class="playingClass" v-if="playing !== undefined">
       <font-awesome-icon icon="compact-disc" />
     </span>
