@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="//pablodorado.com/sitemap.xsl" ?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <sitemap>
+        <loc>https://pablodorado.com/sitemap-index.xml</loc>
+        <lastmod>2019-05-14T06:23:52.606Z</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://pablodorado.com/blog/sitemap.xml</loc>
+        <lastmod>2019-05-14T06:23:52.606Z</lastmod>
+    </sitemap>
+</sitemapindex>
