@@ -48,16 +48,11 @@ header {
   height: 100vh;
   background:
     linear-gradient(
-      rgba(24, 24, 24, 0.78),
-      rgba(24, 24, 24, 0.78)
+      rgba(20, 20, 20, 0.98),
+      rgba(20, 20, 20, 0.92)
     ),
-    url("../assets/img/background.png"),
-    linear-gradient(
-      rgba(24, 24, 24, 0.78),
-      rgba(24, 24, 24, 0.78)
-    );
-  background-blend-mode: hard-light;
-  background-size: cover;
+    url("../assets/img/background.png");
+    background-repeat: repeat;
 }
 
 header * {
