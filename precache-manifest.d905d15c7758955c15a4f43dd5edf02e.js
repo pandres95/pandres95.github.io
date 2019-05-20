@@ -70,6 +70,10 @@ self.__precacheManifest = [
     "url": "/sitemap.xml"
   },
   {
+    "revision": "8a87262a59c73d1047d553b29dd03324",
+    "url": "/sitemap.xsl"
+  },
+  {
     "revision": "838a3cf45fdb58596644",
     "url": "/css/app.e9678a45.css"
   }
