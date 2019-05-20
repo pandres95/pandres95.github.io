@@ -1,15 +1,15 @@
 <template>
-  <a :href="href" class="card">
+  <div class="card">
     <img class="background" :src="background" alt="Card">
     <div class="headings">
-      <div class="headings-title">
+      <a :href="href" class="headings-title">
         <slot name="title"></slot>
-      </div>
+      </a>
       <div class="headings-description">
         <slot name="description"></slot>
       </div>
     </div>
-  </a>
+  </div>
 </template>
 
 <script>
@@ -33,8 +33,10 @@ export default {
 
   width: 100%;
   height: 25vmin;
-  text-decoration: none;
+}
 
+.card a {
+  text-decoration: none;
   color: var(--color-primary);
 }
 
@@ -49,7 +51,6 @@ export default {
 
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
   padding: 0% 0% 1% 5%;
 }
 
