@@ -64,8 +64,8 @@ main section {
   padding: 3em;
   background:
     linear-gradient(
-      rgba(255, 255, 255, 0.90),
-      rgba(255, 255, 255, 0.90)
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.95)
     ),
     url('../assets/img/papernote.png');
   background-repeat: repeat;
