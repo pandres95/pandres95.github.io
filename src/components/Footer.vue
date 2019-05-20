@@ -13,6 +13,7 @@
  * Footer
  */
 p {
+  font-family: 'Helvetica Neue LT Std', Helvetica, Arial, sans-serif;
   font-weight: 200;
 }
 

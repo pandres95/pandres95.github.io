@@ -42,6 +42,7 @@ html {
 
 body {
   font-family: 'Cormorant', serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
