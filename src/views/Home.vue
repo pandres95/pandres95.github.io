@@ -60,7 +60,7 @@ main {
   text-align: start;
 }
 
-main section {
+main > section {
   padding: 3em;
   background:
     linear-gradient(
@@ -69,21 +69,14 @@ main section {
     ),
     url('../assets/img/papernote.png');
   background-repeat: repeat;
-}
-
-@media (min-width: 720px) {
-  main section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
+  column-gap: 0.5em;
 }
 
 section .column {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: calc(3em + 85px);
-  padding-bottom: calc(4.5em + 85px);
+  padding-top: calc(1em + 85px);
 }
 
 .column .grid {
@@ -99,6 +92,22 @@ section .column {
 .column h2 {
   line-height: 1.2em;
   margin-bottom: 2em;
+}
+
+@media (min-width: 720px) {
+  main section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section:not(:last-child) .column:not(:last-child) {
+    padding-top: calc(3em + 85px);
+    padding-bottom: calc(4.5em + 85px);
+  }
+
+  section:last-child .column, section:not(:last-child) .column:last-child {
+    padding-bottom: 0;
+  }
 }
 
 /**

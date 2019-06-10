@@ -25,7 +25,7 @@ export default {
   padding: 0;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 420px) {
   .grid.columns-2 {
     column-count: 2;
     grid-template-columns: repeat(2, 1fr);

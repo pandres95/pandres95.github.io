@@ -15,6 +15,7 @@
 p {
   font-family: 'Helvetica Neue LT Std', Helvetica, Arial, sans-serif;
   font-weight: 200;
+  font-size: 0.7em;
 }
 
 footer {
@@ -37,6 +38,7 @@ footer .copy {
 
 footer .host {
   display: inline-flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -48,10 +50,29 @@ footer .host {
 
 footer .host span {
   line-height: 1.5em;
-  margin-inline-end: 0.32em;
+  margin-block-end: 0.32em;
 }
 
-@media(min-width: 720px) {
+@media (min-width: 370px) {
+  p {
+    font-size: 0.75em;
+  }
+
+  footer .host {
+    flex-direction: row;
+  }
+
+  footer .host span {
+    margin-block-end: 0em;
+    margin-inline-end: 0.32em;
+  }
+}
+
+@media (min-width: 720px) {
+  p {
+    font-size: 0.8em;
+  }
+
   footer {
     justify-content: flex-start;
     text-align: left;

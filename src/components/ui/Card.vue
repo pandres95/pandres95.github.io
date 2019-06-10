@@ -27,12 +27,24 @@ export default {
 </script>
 
 <style scoped>
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  font-size: 120%;
+  line-height: 130%;
+  margin: 0 0 0.5em 0;
+}
+
 .card {
   display: inline-grid;
-  grid-template-columns: 40% 60%;
+  grid-gap: 0.5em;
+  grid-template-rows: auto auto;
+  grid-template-areas: "image" "headings";
 
   width: 100%;
-  height: 25vmin;
+}
+
+.card:not(:last-child) {
+  margin-block-end: 1.5em;
 }
 
 .card a {
@@ -43,6 +55,7 @@ export default {
 .background {
   display: inline-block;
   width: 100%;
+  grid-area: image;
 }
 
 .headings {
@@ -51,12 +64,26 @@ export default {
 
   box-sizing: border-box;
   width: 100%;
-  padding: 0% 0% 1% 5%;
+  grid-area: headings;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
-  font-size: 140%;
-  margin: 0 0 0.5em 0;
+@media (min-width: 480px) {
+  .card {
+    grid-template-columns: 40% 60%;
+    grid-template-areas: "image headings";
+  }
+
+  .card:not(:last-child) {
+    margin-block-end: 1.1em;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    font-size: 140%;
+    line-height: 110%;
+    margin: 0 0 0.5em 0;
+  }
 }
 </style>
