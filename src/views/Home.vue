@@ -11,17 +11,9 @@
         <div class="column projects">
           <h2>Projects I'm currently working on</h2>
           <grid :columns="3">
-            <a target="_blank" rel="noopener noreferrer" href="https://poetri.co/">
-              <img class="project"
-                src="https://bool.js.org/img/users/poetri.png" />
-            </a>
             <a target="_blank" rel="noopener noreferrer" href="https://bool.js.org/">
               <img class="project"
                 src="https://bool.js.org/img/booljs.svg" />
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://truebots.co/">
-              <img class="project"
-                src="https://truebots.co/wp-content/uploads/2019/03/TrueBotr_Logo.png" />
             </a>
           </grid>
         </div>
