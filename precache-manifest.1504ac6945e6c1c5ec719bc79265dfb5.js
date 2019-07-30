@@ -1,6 +1,6 @@
 self.__precacheManifest = [
   {
-    "url": "/font/Cormorant-Light.svg"
+    "url": "/font/Cormorant-Italic.woff"
   },
   {
     "revision": "e1ef52888121922c09f1dd2691d82e6f",
@@ -23,7 +23,7 @@ self.__precacheManifest = [
     "url": "/font/Cormorant-Light.eot"
   },
   {
-    "url": "/font/Cormorant-Light.ttf"
+    "url": "/font/Cormorant-LightItalic.eot"
   },
   {
     "url": "/font/Cormorant-LightItalic.woff"
@@ -32,47 +32,51 @@ self.__precacheManifest = [
     "url": "/font/Cormorant-LightItalic.woff2"
   },
   {
-    "url": "/font/Cormorant-LightItalic.eot"
+    "url": "/font/Cormorant-Light.ttf"
   },
   {
-    "url": "/font/Cormorant-Regular.eot"
-  },
-  {
-    "url": "/font/Cormorant-Regular.woff"
+    "url": "/font/Cormorant-Light.svg"
   },
   {
     "url": "/font/Cormorant-Regular.woff2"
   },
   {
-    "url": "/font/Cormorant-Regular.ttf"
+    "url": "/font/Cormorant-Regular.woff"
+  },
+  {
+    "url": "/font/Cormorant-Regular.eot"
   },
   {
     "url": "/font/Cormorant-LightItalic.ttf"
   },
   {
-    "url": "/font/Cormorant-Italic.woff"
+    "url": "/font/Cormorant-LightItalic.svg"
   },
   {
     "url": "/font/Cormorant-Italic.woff2"
   },
   {
-    "revision": "82b5e2596dc12637be7a",
-    "url": "/js/app.fe295ec8.js"
-  },
-  {
-    "url": "/font/Cormorant-Italic.ttf"
+    "revision": "d9ae93103821b7a0c96c",
+    "url": "/js/app.299945aa.js"
   },
   {
     "url": "/font/Cormorant-Italic.eot"
   },
   {
-    "url": "/font/Cormorant-LightItalic.svg"
+    "url": "/font/Cormorant-Regular.ttf"
   },
   {
     "url": "/font/Cormorant-Regular.svg"
   },
   {
+    "url": "/font/Cormorant-Italic.ttf"
+  },
+  {
     "url": "/font/Cormorant-Italic.svg"
+  },
+  {
+    "revision": "95f1f9c08a6540838b6cfeda9a7c8a95",
+    "url": "/img/papernote.95f1f9c0.png"
   },
   {
     "revision": "ef91eebd33c8634f8651f01e9d6cd51c",
@@ -87,10 +91,6 @@ self.__precacheManifest = [
     "url": "/img/background.6f6f7ef6.png"
   },
   {
-    "revision": "95f1f9c08a6540838b6cfeda9a7c8a95",
-    "url": "/img/papernote.95f1f9c0.png"
-  },
-  {
     "revision": "341b42ea3e0f150636c77616feb6b5ca",
     "url": "/img/host.341b42ea.svg"
   },
@@ -99,7 +99,7 @@ self.__precacheManifest = [
     "url": "/img/sign.233a0d4d.svg"
   },
   {
-    "revision": "f6afd6b43331a7ffe9e8710391d5c54e",
+    "revision": "b84c027e8905bbb50d04e6ebdf8980a8",
     "url": "/index.html"
   },
   {
@@ -119,7 +119,7 @@ self.__precacheManifest = [
     "url": "/sitemap.xsl"
   },
   {
-    "revision": "82b5e2596dc12637be7a",
-    "url": "/css/app.88b8e8e6.css"
+    "revision": "d9ae93103821b7a0c96c",
+    "url": "/css/app.ccda5605.css"
   }
 ];
