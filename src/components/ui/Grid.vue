@@ -26,6 +26,11 @@ export default {
 }
 
 @media (min-width: 420px) {
+  .grid.columns-1 {
+    column-count: 1;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   .grid.columns-2 {
     column-count: 2;
     grid-template-columns: repeat(2, 1fr);
