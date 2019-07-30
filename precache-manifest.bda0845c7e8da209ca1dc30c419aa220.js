@@ -56,8 +56,8 @@ self.__precacheManifest = [
     "url": "/font/Cormorant-Italic.woff2"
   },
   {
-    "revision": "ed194254392ec5cae4df",
-    "url": "/js/app.c972a7c4.js"
+    "revision": "5da8733976f128cd6424",
+    "url": "/js/app.cc3efa91.js"
   },
   {
     "url": "/font/Cormorant-Italic.eot"
@@ -87,10 +87,6 @@ self.__precacheManifest = [
     "url": "/img/background.6f6f7ef6.png"
   },
   {
-    "revision": "95f1f9c08a6540838b6cfeda9a7c8a95",
-    "url": "/img/papernote.95f1f9c0.png"
-  },
-  {
     "revision": "341b42ea3e0f150636c77616feb6b5ca",
     "url": "/img/host.341b42ea.svg"
   },
@@ -99,7 +95,11 @@ self.__precacheManifest = [
     "url": "/img/sign.233a0d4d.svg"
   },
   {
-    "revision": "4065f9713a9436609ddb1ab0af0b3e7c",
+    "revision": "95f1f9c08a6540838b6cfeda9a7c8a95",
+    "url": "/img/papernote.95f1f9c0.png"
+  },
+  {
+    "revision": "88dca7406cc70965958b14af55916d06",
     "url": "/index.html"
   },
   {
@@ -119,7 +119,7 @@ self.__precacheManifest = [
     "url": "/sitemap.xsl"
   },
   {
-    "revision": "ed194254392ec5cae4df",
-    "url": "/css/app.ecb0d174.css"
+    "revision": "5da8733976f128cd6424",
+    "url": "/css/app.387c7f11.css"
   }
 ];
