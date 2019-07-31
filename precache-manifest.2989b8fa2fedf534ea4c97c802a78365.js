@@ -56,8 +56,8 @@ self.__precacheManifest = [
     "url": "/font/Cormorant-Italic.woff2"
   },
   {
-    "revision": "5da8733976f128cd6424",
-    "url": "/js/app.cc3efa91.js"
+    "revision": "048b19e5611aba60fb36",
+    "url": "/js/app.fd53e6c0.js"
   },
   {
     "url": "/font/Cormorant-Italic.eot"
@@ -75,8 +75,12 @@ self.__precacheManifest = [
     "url": "/font/Cormorant-Italic.svg"
   },
   {
-    "revision": "ef91eebd33c8634f8651f01e9d6cd51c",
-    "url": "/img/profile.ef91eebd.jpg"
+    "revision": "ade9ef3c126f1beb14686d5adc2dd744",
+    "url": "/img/profile.ade9ef3c.jpg"
+  },
+  {
+    "revision": "9534a2142b57f4d4d84c83007f4ccedb",
+    "url": "/img/profile.9534a214.webp"
   },
   {
     "revision": "6eae999ea3d5b661f6277beb22e68418",
@@ -99,7 +103,7 @@ self.__precacheManifest = [
     "url": "/img/papernote.95f1f9c0.png"
   },
   {
-    "revision": "88dca7406cc70965958b14af55916d06",
+    "revision": "a5128276a365b27d975dc72e899787e8",
     "url": "/index.html"
   },
   {
@@ -119,7 +123,7 @@ self.__precacheManifest = [
     "url": "/sitemap.xsl"
   },
   {
-    "revision": "5da8733976f128cd6424",
-    "url": "/css/app.387c7f11.css"
+    "revision": "048b19e5611aba60fb36",
+    "url": "/css/app.b4fbdc05.css"
   }
 ];
