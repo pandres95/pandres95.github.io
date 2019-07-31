@@ -1,7 +1,11 @@
 <template>
   <header>
     <div class="info">
-      <img class="profile" alt="Pablo Andrés Dorado Suárez" src="../assets/img/profile.jpg">
+      <picture class="profile">
+        <source srcset="../assets/img/profile.webp" type="image/webp">
+        <source srcset="../assets/img/profile.jpg" type="image/jpeg">
+        <img alt="Pablo Andrés Dorado Suárez">
+      </picture>
       <h1>Pablo Andrés Dorado Suárez</h1>
       <h2>Development Researcher</h2>
       <nav class="social">
@@ -88,7 +92,7 @@ img.scroll {
   95% { transform: translateY(-10px); }
 }
 
-img.profile {
+.profile img {
   height: 270px;
   width: 270px;
   border-radius: 50%;
