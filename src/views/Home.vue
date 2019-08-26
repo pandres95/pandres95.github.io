@@ -10,9 +10,13 @@
 
         <div class="column projects">
           <h2>Projects I'm currently working on</h2>
-          <grid :columns="1">
+          <grid :columns="2">
+            <a target="_blank" rel="noopener noreferrer" href="https://valiu.com/">
+              <img alt="Valiu" class="project"
+                src="https://bool.js.org/img/u.svg" />
+            </a>
             <a target="_blank" rel="noopener noreferrer" href="https://bool.js.org/">
-              <img class="project"
+              <img alt="BoolJS" class="project"
                 src="https://bool.js.org/img/booljs.svg" />
             </a>
           </grid>
