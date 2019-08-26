@@ -1,6 +1,6 @@
 self.__precacheManifest = [
   {
-    "url": "/font/Cormorant-LightItalic.svg"
+    "url": "/font/Cormorant-Italic.ttf"
   },
   {
     "revision": "e1ef52888121922c09f1dd2691d82e6f",
@@ -56,11 +56,11 @@ self.__precacheManifest = [
     "url": "/font/Cormorant-Italic.woff2"
   },
   {
-    "revision": "2239cab4946ed1d12528",
-    "url": "/js/app.7ab8f48f.js"
+    "url": "/font/Cormorant-LightItalic.svg"
   },
   {
-    "url": "/font/Cormorant-Italic.ttf"
+    "revision": "a162d6b53f87290c7c53",
+    "url": "/js/app.85714162.js"
   },
   {
     "url": "/font/Cormorant-LightItalic.ttf"
@@ -95,6 +95,10 @@ self.__precacheManifest = [
     "url": "/img/background.6f6f7ef6.png"
   },
   {
+    "revision": "97eae73137da211df73e2b989850a513",
+    "url": "/img/u.97eae731.svg"
+  },
+  {
     "revision": "341b42ea3e0f150636c77616feb6b5ca",
     "url": "/img/host.341b42ea.svg"
   },
@@ -103,7 +107,7 @@ self.__precacheManifest = [
     "url": "/img/sign.233a0d4d.svg"
   },
   {
-    "revision": "460304c8a5b91b11202dcad8e07d98a5",
+    "revision": "6af9b7bb05af779c7385cb0f25767fd8",
     "url": "/index.html"
   },
   {
@@ -123,7 +127,7 @@ self.__precacheManifest = [
     "url": "/sitemap.xsl"
   },
   {
-    "revision": "2239cab4946ed1d12528",
-    "url": "/css/app.36762d3c.css"
+    "revision": "a162d6b53f87290c7c53",
+    "url": "/css/app.4b63adf5.css"
   }
 ];
