@@ -1,5 +1,7 @@
 # pablodorado.com
 
+[![Build Status](https://travis-ci.org/pandres95/pandres95.github.io.svg?branch=develop)](https://travis-ci.org/pandres95/pandres95.github.io)
+
 ## Project setup
 ```
 npm install
