@@ -13,7 +13,7 @@
           <grid :columns="2">
             <a target="_blank" rel="noopener noreferrer" href="https://valiu.com/">
               <img alt="Valiu" class="project"
-                src="/img/u.svg" />
+                src="../assets/img/u.svg" />
             </a>
             <a target="_blank" rel="noopener noreferrer" href="https://bool.js.org/">
               <img alt="BoolJS" class="project"
