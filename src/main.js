@@ -8,7 +8,8 @@ import {
   faInstagram,
   faLinkedinIn,
   faGithub,
-  faGitlab
+  faGitlab,
+  faTwitch
 } from '@fortawesome/free-brands-svg-icons'
 import { faCompactDisc } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -22,7 +23,7 @@ import './registerServiceWorker'
 library.add(
   faCompactDisc,
   faFacebookSquare, faTwitterSquare, faInstagram, faLinkedinIn,
-  faGithub, faGitlab);
+  faGithub, faGitlab, faTwitch);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.use(VueAnalytics, {

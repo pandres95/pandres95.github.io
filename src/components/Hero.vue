@@ -27,6 +27,9 @@
         <a target="_blank" rel="noopener noreferrer" href="https://gitlab.com/pandres95">
           <font-awesome-icon :icon="['fab', 'gitlab']" />
         </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://twitch.tv/pandres95">
+          <font-awesome-icon :icon="['fab', 'twitch']" />
+        </a>
       </nav>
     </div>
     <img @click="scrollToContent" class="scroll" src="../assets/img/btn-scroll_down.svg">
