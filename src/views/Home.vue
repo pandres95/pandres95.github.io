@@ -11,13 +11,25 @@
         <div class="column projects">
           <h2>Projects I'm currently working on</h2>
           <grid :columns="2">
-            <a target="_blank" rel="noopener noreferrer" href="https://valiu.com/">
-              <img alt="Valiu" class="project"
-                src="../assets/img/u.svg" />
+            <a target="_blank" rel="noopener noreferrer" href="https://castr.io/">
+              <img alt="Castr" class="project"
+                src="../assets/img/castr.svg" />
             </a>
             <a target="_blank" rel="noopener noreferrer" href="https://bool.js.org/">
-              <img alt="BoolJS" class="project"
+              <img alt="Poetri" class="project"
                 src="https://bool.js.org/img/booljs.svg" />
+            </a>
+          </grid>
+
+          <h2>Projects I've previously worked with</h2>
+          <grid :columns="2">
+            <a target="_blank" rel="noopener noreferrer" href="https://valiu.com/">
+              <img alt="Valiu" class="project"
+                src="../assets/img/valiu.svg" />
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://poetri.io/">
+              <img alt="Poetri" class="project"
+                src="../assets/img/poetri.svg" />
             </a>
           </grid>
         </div>
@@ -86,8 +98,13 @@ section .column {
 }
 
 .column h2 {
+  font-size: 1.5em;
   line-height: 1.2em;
-  margin-bottom: 2em;
+  margin-bottom: 0.75em;
+}
+
+.column > .grid ~ h2 {
+  margin-top: 1em;
 }
 
 @media (min-width: 720px) {
