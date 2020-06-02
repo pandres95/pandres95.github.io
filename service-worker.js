@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.58e13ab0feefd15c959b9ea49e249e2a.js"
+  "/precache-manifest.b24a41fbf22d8ca1c33ab1368f72b617.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "pablodorado.com"});
