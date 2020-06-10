@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "85ac43538d8bb52536b5",
-    "url": "/css/app.25a22f0f.css"
+    "revision": "d67b600ec97247b4bb01",
+    "url": "/css/app.d030bc6b.css"
   },
   {
-    "revision": "85ac43538d8bb52536b5",
-    "url": "/js/app.c28bbd7c.js"
+    "revision": "d67b600ec97247b4bb01",
+    "url": "/js/app.30443d9f.js"
   },
   {
     "revision": "847691ae9bb3d9bbe823",
@@ -95,10 +95,6 @@ self.__precacheManifest = [
     "url": "/img/btn-scroll_down.6eae999e.svg"
   },
   {
-    "revision": "95f1f9c08a6540838b6cfeda9a7c8a95",
-    "url": "/img/papernote.95f1f9c0.png"
-  },
-  {
     "revision": "341b42ea3e0f150636c77616feb6b5ca",
     "url": "/img/host.341b42ea.svg"
   },
@@ -111,6 +107,10 @@ self.__precacheManifest = [
     "url": "/img/podcastless.0cdb64be.svg"
   },
   {
+    "revision": "95f1f9c08a6540838b6cfeda9a7c8a95",
+    "url": "/img/papernote.95f1f9c0.png"
+  },
+  {
     "revision": "7fb1ba06d92513d76a5665710380a9f9",
     "url": "/img/poetri.7fb1ba06.svg"
   },
@@ -119,7 +119,7 @@ self.__precacheManifest = [
     "url": "/img/valiu.58b34860.svg"
   },
   {
-    "revision": "17158f4bd89bffe2bb8948f9cb180cfe",
+    "revision": "da6faf296c95f9651dcbf366882d0ae5",
     "url": "/index.html"
   },
   {
