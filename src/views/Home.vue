@@ -10,7 +10,7 @@
 
         <div class="column projects">
           <h2>Projects I'm currently working on</h2>
-          <grid :columns="2">
+          <grid :columns="3">
             <a target="_blank" rel="noopener noreferrer" href="https://castr.io/">
               <img alt="Castr" class="project"
                 src="../assets/img/castr.svg" />
