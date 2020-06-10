@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "315585602648be9fbcf8",
-    "url": "/css/app.06977577.css"
+    "revision": "85ac43538d8bb52536b5",
+    "url": "/css/app.25a22f0f.css"
   },
   {
-    "revision": "315585602648be9fbcf8",
-    "url": "/js/app.eb875f23.js"
+    "revision": "85ac43538d8bb52536b5",
+    "url": "/js/app.c28bbd7c.js"
   },
   {
     "revision": "847691ae9bb3d9bbe823",
@@ -15,13 +15,13 @@ self.__precacheManifest = [
     "url": "/fonts.css"
   },
   {
-    "url": "/font/Cormorant-Light.eot"
-  },
-  {
     "url": "/font/Cormorant-Light.woff"
   },
   {
     "url": "/font/Cormorant-Light.woff2"
+  },
+  {
+    "url": "/font/Cormorant-Light.eot"
   },
   {
     "url": "/font/Cormorant-Light.ttf"
@@ -36,10 +36,7 @@ self.__precacheManifest = [
     "url": "/font/Cormorant-LightItalic.woff2"
   },
   {
-    "url": "/font/Cormorant-LightItalic.ttf"
-  },
-  {
-    "url": "/font/Cormorant-Regular.eot"
+    "url": "/font/Cormorant-Light.svg"
   },
   {
     "url": "/font/Cormorant-LightItalic.svg"
@@ -51,10 +48,16 @@ self.__precacheManifest = [
     "url": "/font/Cormorant-Regular.woff2"
   },
   {
-    "url": "/font/Cormorant-Regular.ttf"
+    "url": "/font/Cormorant-LightItalic.ttf"
+  },
+  {
+    "url": "/font/Cormorant-Regular.eot"
   },
   {
     "url": "/font/Cormorant-Italic.eot"
+  },
+  {
+    "url": "/font/Cormorant-Regular.ttf"
   },
   {
     "url": "/font/Cormorant-Italic.woff2"
@@ -70,13 +73,6 @@ self.__precacheManifest = [
   },
   {
     "url": "/font/Cormorant-Italic.ttf"
-  },
-  {
-    "url": "/font/Cormorant-Light.svg"
-  },
-  {
-    "revision": "95f1f9c08a6540838b6cfeda9a7c8a95",
-    "url": "/img/papernote.95f1f9c0.png"
   },
   {
     "revision": "ade9ef3c126f1beb14686d5adc2dd744",
@@ -99,12 +95,20 @@ self.__precacheManifest = [
     "url": "/img/btn-scroll_down.6eae999e.svg"
   },
   {
+    "revision": "95f1f9c08a6540838b6cfeda9a7c8a95",
+    "url": "/img/papernote.95f1f9c0.png"
+  },
+  {
     "revision": "341b42ea3e0f150636c77616feb6b5ca",
     "url": "/img/host.341b42ea.svg"
   },
   {
     "revision": "233a0d4d1f937ab24c4af003ac718cae",
     "url": "/img/sign.233a0d4d.svg"
+  },
+  {
+    "revision": "0cdb64be40a85a66af28c9cc0c84b221",
+    "url": "/img/podcastless.0cdb64be.svg"
   },
   {
     "revision": "7fb1ba06d92513d76a5665710380a9f9",
@@ -115,7 +119,7 @@ self.__precacheManifest = [
     "url": "/img/valiu.58b34860.svg"
   },
   {
-    "revision": "32dc596325840b7a409af6233e6d3da3",
+    "revision": "17158f4bd89bffe2bb8948f9cb180cfe",
     "url": "/index.html"
   },
   {
