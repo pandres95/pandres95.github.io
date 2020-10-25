@@ -10,10 +10,14 @@
 
         <div class="column projects">
           <h2>Projects I'm currently working on</h2>
-          <grid :columns="3">
-            <a target="_blank" rel="noopener noreferrer" href="https://castr.io/">
-              <img alt="Castr" class="project"
-                src="../assets/img/castr.svg" />
+          <grid :columns="4">
+            <a target="_blank" rel="noopener noreferrer" href="https://theowly.io/">
+              <img alt="Agent Owl" class="project"
+                src="../assets/img/owl.svg" />
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://lastfood.co/">
+              <img alt="LastFood" class="project"
+                src="../assets/img/lastfood.svg" />
             </a>
             <a target="_blank" rel="noopener noreferrer" href="https://podcastless.com/">
               <img alt="Podcastless" class="project"

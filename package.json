@@ -15,7 +15,6 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/vue-fontawesome": "^0.1.9",
-    "i": "^0.3.6",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
     "vue-analytics": "^5.22.1",
