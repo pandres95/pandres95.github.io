@@ -10,6 +10,18 @@
 
         <div class="column projects">
           <h2>Projects I'm currently working on</h2>
+          <grid :columns="2">
+            <a target="_blank" rel="noopener noreferrer" href="https://bool.js.org/">
+              <img alt="BoolJS" class="project"
+                src="https://bool.js.org/img/booljs.svg" />
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://podcastless.com/">
+              <img alt="Podcastless" class="project"
+                src="../assets/img/podcastless.svg" />
+            </a>
+          </grid>
+
+          <h2>Projects I've previously worked with</h2>
           <grid :columns="4">
             <a target="_blank" rel="noopener noreferrer" href="https://theowly.io/">
               <img alt="Agent Owl" class="project"
@@ -19,18 +31,6 @@
               <img alt="LastFood" class="project"
                 src="../assets/img/lastfood.svg" />
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://podcastless.com/">
-              <img alt="Podcastless" class="project"
-                src="../assets/img/podcastless.svg" />
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://bool.js.org/">
-              <img alt="BoolJS" class="project"
-                src="https://bool.js.org/img/booljs.svg" />
-            </a>
-          </grid>
-
-          <h2>Projects I've previously worked with</h2>
-          <grid :columns="2">
             <a target="_blank" rel="noopener noreferrer" href="https://valiu.com/">
               <img alt="Valiu" class="project"
                 src="../assets/img/valiu.svg" />
