@@ -10,7 +10,11 @@
 
         <div class="column projects">
           <h2>Projects I'm currently working on</h2>
-          <grid :columns="2">
+          <grid :columns="3">
+            <a target="_blank" rel="noopener noreferrer" href="https://pulsarml.com/">
+              <img alt="Pulsar" class="project"
+                src="../assets/img/pulsar.svg" />
+            </a>
             <a target="_blank" rel="noopener noreferrer" href="https://bool.js.org/">
               <img alt="BoolJS" class="project"
                 src="https://bool.js.org/img/booljs.svg" />
