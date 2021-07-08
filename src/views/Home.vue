@@ -11,9 +11,9 @@
         <div class="column projects">
           <h2>Projects I'm currently working on</h2>
           <grid :columns="3">
-            <a target="_blank" rel="noopener noreferrer" href="https://pulsarml.com/">
-              <img alt="Pulsar" class="project"
-                src="../assets/img/pulsar.svg" />
+            <a target="_blank" rel="noopener noreferrer" href="https://gestpot.com/">
+              <img alt="Spot" class="project"
+                src="../assets/img/getspot.png" />
             </a>
             <a target="_blank" rel="noopener noreferrer" href="https://bool.js.org/">
               <img alt="BoolJS" class="project"
@@ -27,6 +27,10 @@
 
           <h2>Projects I've previously worked with</h2>
           <grid :columns="4">
+            <a target="_blank" rel="noopener noreferrer" href="https://pulsarml.com/">
+              <img alt="Pulsar" class="project"
+                src="../assets/img/pulsar.svg" />
+            </a>
             <a target="_blank" rel="noopener noreferrer" href="https://theowly.io/">
               <img alt="Agent Owl" class="project"
                 src="../assets/img/owl.svg" />
@@ -38,10 +42,6 @@
             <a target="_blank" rel="noopener noreferrer" href="https://valiu.com/">
               <img alt="Valiu" class="project"
                 src="../assets/img/valiu.svg" />
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://poetri.io/">
-              <img alt="Poetri" class="project"
-                src="../assets/img/poetri.svg" />
             </a>
           </grid>
         </div>
@@ -76,6 +76,7 @@ h2 {
 }
 
 main {
+  min-height: calc(100vh - 120px);
   box-sizing: border-box;
   text-align: start;
 }
