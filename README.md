@@ -1,6 +1,6 @@
 # pablodorado.com
 
-[![Build Status](https://travis-ci.org/pandres95/pandres95.github.io.svg?branch=develop)](https://travis-ci.org/pandres95/pandres95.github.io)
+[![Release to Production](https://github.com/pandres95/pandres95.github.io/actions/workflows/release.yml/badge.svg)](https://github.com/pandres95/pandres95.github.io/actions/workflows/release.yml)
 
 ## Project setup
 ```
