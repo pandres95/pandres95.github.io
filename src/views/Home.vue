@@ -13,7 +13,7 @@
           <grid :columns="3">
             <a target="_blank" rel="noopener noreferrer" href="https://gestpot.com/">
               <img alt="Spot" class="project"
-                src="../assets/img/getspot.png" />
+                src="../assets/img/getspot.jpg" />
             </a>
             <a target="_blank" rel="noopener noreferrer" href="https://bool.js.org/">
               <img alt="BoolJS" class="project"
