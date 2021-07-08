@@ -1,7 +1,6 @@
-name: Release to Production
+name: Build page
 on:
-  release:
-    types: [created, released, edited]
+  - push
   
 jobs:
   build-site:
@@ -11,4 +10,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - uses: actions/setup-node@v2
+      - run: npm ci
       - run: npm run build
