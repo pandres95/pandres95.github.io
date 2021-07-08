@@ -1,0 +1,9 @@
+name: 'Build Website'
+description: 'Builds the website'
+runs:
+  using: "composite"
+  steps:
+    - run: npm ci
+      shell: zsh
+    - run: npm run build
+      shell: zsh

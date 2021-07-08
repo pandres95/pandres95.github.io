@@ -1,0 +1,19 @@
+name: Release to Production
+on:
+  - release
+  
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2  
+      - name: Build Page
+        uses: build-page@v1
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: master
+          folder: dist
