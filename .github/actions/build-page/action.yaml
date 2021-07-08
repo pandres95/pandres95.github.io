@@ -4,6 +4,6 @@ runs:
   using: "composite"
   steps:
     - run: npm ci
-      shell: zsh
+      shell: bash
     - run: npm run build
-      shell: zsh
+      shell: bash

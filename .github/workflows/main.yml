@@ -1,4 +1,4 @@
-name: Single Check
+name: Check on Push
 on:
   - push
   
@@ -12,6 +12,6 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
       - name: Build Page
-        uses: pandres95/pandres95.github.io/build-page/.github/workflows/build-page@v1
+        uses: ./.github/actions/build-page
       
     
