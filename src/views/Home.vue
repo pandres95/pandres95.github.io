@@ -11,9 +11,9 @@
         <div class="column projects">
           <h2>Projects I'm currently working on</h2>
           <grid :columns="3">
-            <a target="_blank" rel="noopener noreferrer" href="https://gestpot.com/">
-              <img alt="Spot" class="project"
-                src="../assets/img/getspot.jpg" />
+            <a target="_blank" rel="noopener noreferrer" href="https://bloque.app/">
+              <img alt="Bloque" class="project"
+                src="../assets/img/bloque.jpg" />
             </a>
             <a target="_blank" rel="noopener noreferrer" href="https://bool.js.org/">
               <img alt="BoolJS" class="project"
@@ -42,6 +42,12 @@
             <a target="_blank" rel="noopener noreferrer" href="https://valiu.com/">
               <img alt="Valiu" class="project"
                 src="../assets/img/valiu.svg" />
+            </a>
+          </grid>
+          <grid :columns="1">
+            <a target="_blank" rel="noopener noreferrer" href="https://gestpot.com/">
+              <img alt="Spot" class="project"
+                src="../assets/img/getspot.jpg" />
             </a>
           </grid>
         </div>
@@ -102,6 +108,10 @@ section .column {
 
 .column .grid {
   width: 100%;
+}
+
+.column .grid+.grid {
+  margin-top: 0.5em;
 }
 
 @media (min-width: 720px) {
