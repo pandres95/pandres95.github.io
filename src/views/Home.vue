@@ -29,7 +29,7 @@
           <grid :columns="4">
             <a target="_blank" rel="noopener noreferrer" href="https://pulsarml.com/">
               <img alt="Pulsar" class="project"
-                src="../assets/img/pulsar.svg" />
+                src="../assets/img/pulsar.jpg" />
             </a>
             <a target="_blank" rel="noopener noreferrer" href="https://theowly.io/">
               <img alt="Agent Owl" class="project"
