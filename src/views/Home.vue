@@ -26,28 +26,18 @@
           </grid>
 
           <h2>Projects I've previously worked with</h2>
-          <grid :columns="4">
+          <grid :columns="3">
+            <a target="_blank" rel="noopener noreferrer" href="https://gestpot.com/">
+              <img alt="Spot" class="project"
+                src="../assets/img/getspot.jpg" />
+            </a>
             <a target="_blank" rel="noopener noreferrer" href="https://pulsarml.com/">
               <img alt="Pulsar" class="project"
                 src="../assets/img/pulsar.jpg" />
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://theowly.io/">
-              <img alt="Agent Owl" class="project"
-                src="../assets/img/owl.svg" />
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://lastfood.co/">
-              <img alt="LastFood" class="project"
-                src="../assets/img/lastfood.svg" />
-            </a>
             <a target="_blank" rel="noopener noreferrer" href="https://valiu.com/">
               <img alt="Valiu" class="project"
                 src="../assets/img/valiu.svg" />
-            </a>
-          </grid>
-          <grid :columns="1">
-            <a target="_blank" rel="noopener noreferrer" href="https://gestpot.com/">
-              <img alt="Spot" class="project"
-                src="../assets/img/getspot.jpg" />
             </a>
           </grid>
         </div>
