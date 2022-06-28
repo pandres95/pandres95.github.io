@@ -27,8 +27,8 @@
 
           <h2>Projects I've previously worked with</h2>
           <grid :columns="3">
-            <a target="_blank" rel="noopener noreferrer" href="https://gestpot.com/">
-              <img alt="Spot" class="project"
+            <a target="_blank" rel="noopener noreferrer" href="https://getspot.com/">
+              <img alt="Spot Insurance" class="project"
                 src="../assets/img/spot.svg" />
             </a>
             <a target="_blank" rel="noopener noreferrer" href="https://pulsarml.com/">
