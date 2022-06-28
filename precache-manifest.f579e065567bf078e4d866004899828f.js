@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "388db9a5ee600bcabd94",
-    "url": "/css/app.72d5b351.css"
+    "revision": "785df50b5ac79a0862c0",
+    "url": "/css/app.4cfed50c.css"
   },
   {
-    "revision": "388db9a5ee600bcabd94",
-    "url": "/js/app.144f973f.js"
+    "revision": "785df50b5ac79a0862c0",
+    "url": "/js/app.3060dcaf.js"
   },
   {
     "revision": "80b51520b52fee83d1fa",
@@ -21,62 +21,58 @@ self.__precacheManifest = [
     "url": "/font/Cormorant-Light.eot"
   },
   {
-    "url": "/font/Cormorant-Light.ttf"
-  },
-  {
-    "url": "/font/Cormorant-Light.svg"
-  },
-  {
-    "url": "/font/Cormorant-LightItalic.woff2"
-  },
-  {
-    "url": "/font/Cormorant-LightItalic.ttf"
-  },
-  {
-    "url": "/font/Cormorant-Regular.eot"
-  },
-  {
     "url": "/font/Cormorant-Light.woff"
   },
   {
     "url": "/font/Cormorant-LightItalic.eot"
   },
   {
-    "url": "/font/Cormorant-Regular.woff2"
+    "url": "/font/Cormorant-LightItalic.woff"
   },
   {
-    "url": "/font/Cormorant-Regular.woff"
+    "url": "/font/Cormorant-LightItalic.woff2"
   },
   {
-    "url": "/font/Cormorant-Regular.ttf"
+    "url": "/font/Cormorant-Light.ttf"
   },
   {
     "url": "/font/Cormorant-Italic.woff"
   },
   {
+    "url": "/font/Cormorant-Italic.eot"
+  },
+  {
+    "url": "/font/Cormorant-LightItalic.ttf"
+  },
+  {
     "url": "/font/Cormorant-Italic.woff2"
   },
   {
-    "url": "/font/Cormorant-LightItalic.svg"
-  },
-  {
-    "url": "/font/Cormorant-LightItalic.woff"
-  },
-  {
-    "url": "/font/Cormorant-Regular.svg"
-  },
-  {
-    "url": "/font/Cormorant-Italic.eot"
+    "url": "/font/Cormorant-Regular.eot"
   },
   {
     "url": "/font/Cormorant-Italic.ttf"
   },
   {
+    "url": "/font/Cormorant-Regular.woff"
+  },
+  {
+    "url": "/font/Cormorant-Regular.woff2"
+  },
+  {
+    "url": "/font/Cormorant-LightItalic.svg"
+  },
+  {
+    "url": "/font/Cormorant-Regular.ttf"
+  },
+  {
     "url": "/font/Cormorant-Italic.svg"
   },
   {
-    "revision": "95f1f9c08a6540838b6cfeda9a7c8a95",
-    "url": "/img/papernote.95f1f9c0.png"
+    "url": "/font/Cormorant-Light.svg"
+  },
+  {
+    "url": "/font/Cormorant-Regular.svg"
   },
   {
     "revision": "c0e3e1fa30a4cb1563d5588338b6ca35",
@@ -85,10 +81,6 @@ self.__precacheManifest = [
   {
     "revision": "02b12594e1b23221325d37310c0120dd",
     "url": "/img/getspot.02b12594.jpg"
-  },
-  {
-    "revision": "99a1f30e8ff6d91f1f5931b4e7cfbd07",
-    "url": "/img/lastfood.99a1f30e.svg"
   },
   {
     "revision": "ade9ef3c126f1beb14686d5adc2dd744",
@@ -107,16 +99,16 @@ self.__precacheManifest = [
     "url": "/img/btn-scroll_down.6eae999e.svg"
   },
   {
+    "revision": "95f1f9c08a6540838b6cfeda9a7c8a95",
+    "url": "/img/papernote.95f1f9c0.png"
+  },
+  {
     "revision": "341b42ea3e0f150636c77616feb6b5ca",
     "url": "/img/host.341b42ea.svg"
   },
   {
     "revision": "233a0d4d1f937ab24c4af003ac718cae",
     "url": "/img/sign.233a0d4d.svg"
-  },
-  {
-    "revision": "f19ac56200518b4a8b10388844f95ac1",
-    "url": "/img/owl.f19ac562.svg"
   },
   {
     "revision": "0cdb64be40a85a66af28c9cc0c84b221",
@@ -127,7 +119,7 @@ self.__precacheManifest = [
     "url": "/img/valiu.58b34860.svg"
   },
   {
-    "revision": "1e51d2a40fefea6427d973ae6b92e123",
+    "revision": "9116ff1e778c65c277b402d37595c12b",
     "url": "/index.html"
   },
   {
