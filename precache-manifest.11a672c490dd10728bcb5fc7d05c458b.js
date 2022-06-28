@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "fdf1bd2d7b37a715ccc2",
-    "url": "/css/app.7430f12c.css"
+    "revision": "47c7ec3bec7215a4d595",
+    "url": "/css/app.c39697e9.css"
   },
   {
-    "revision": "fdf1bd2d7b37a715ccc2",
-    "url": "/js/app.32788194.js"
+    "revision": "47c7ec3bec7215a4d595",
+    "url": "/js/app.6dfd7666.js"
   },
   {
     "revision": "80b51520b52fee83d1fa",
@@ -75,10 +75,6 @@ self.__precacheManifest = [
     "url": "/font/Cormorant-Regular.svg"
   },
   {
-    "revision": "95f1f9c08a6540838b6cfeda9a7c8a95",
-    "url": "/img/papernote.95f1f9c0.png"
-  },
-  {
     "revision": "c0e3e1fa30a4cb1563d5588338b6ca35",
     "url": "/img/bloque.c0e3e1fa.jpg"
   },
@@ -119,7 +115,11 @@ self.__precacheManifest = [
     "url": "/img/valiu.58b34860.svg"
   },
   {
-    "revision": "012457f4953381c9a1af811a32585544",
+    "revision": "95f1f9c08a6540838b6cfeda9a7c8a95",
+    "url": "/img/papernote.95f1f9c0.png"
+  },
+  {
+    "revision": "52475b4c29ffc0b71c38692a6ae0aeff",
     "url": "/index.html"
   },
   {
