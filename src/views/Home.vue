@@ -29,7 +29,7 @@
           <grid :columns="3">
             <a target="_blank" rel="noopener noreferrer" href="https://gestpot.com/">
               <img alt="Spot" class="project"
-                src="../assets/img/getspot.jpg" />
+                src="../assets/img/spot.svg" />
             </a>
             <a target="_blank" rel="noopener noreferrer" href="https://pulsarml.com/">
               <img alt="Pulsar" class="project"
