@@ -1,10 +1,6 @@
 <template>
   <footer>
     <p class="copy">&copy; {{ new Date().getFullYear() }} Pablo Andrés Dorado Suárez</p>
-    <p class="host">
-      <span>Proudly hosted by</span>
-      <img class="host-logo" src="../assets/img/host.svg">
-    </p>
   </footer>
 </template>
 
