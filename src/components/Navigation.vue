@@ -114,7 +114,7 @@ span {
   display: none;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 360px) {
   .full-floating .music-player {
     display: inline-flex;
     color: var(--color-contrast);
