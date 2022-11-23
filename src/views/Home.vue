@@ -10,34 +10,72 @@
 
         <div class="column projects">
           <h2>Projects I'm currently working on</h2>
-          <grid :columns="3">
-            <a target="_blank" rel="noopener noreferrer" href="https://bloque.app/">
-              <img alt="Bloque" class="project"
-                src="../assets/img/bloque.jpg" />
+          <grid :columns="2">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://cubo.land/"
+            >
+              <img
+                alt="Cubo"
+                class="project"
+                src="../assets/img/bloque.jpg"
+              />
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://bool.js.org/">
-              <img alt="BoolJS" class="project"
-                src="https://bool.js.org/img/booljs.svg" />
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://podcastless.com/">
-              <img alt="Podcastless" class="project"
-                src="../assets/img/podcastless.svg" />
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://swimmingoncode.com/"
+            >
+              <img
+                alt="Swimming On Code"
+                class="project"
+                src="../assets/img/swimmingoncode.png"
+              />
             </a>
           </grid>
 
           <h2>Projects I've previously worked with</h2>
-          <grid :columns="3">
-            <a target="_blank" rel="noopener noreferrer" href="https://getspot.com/">
-              <img alt="Spot Insurance" class="project"
-                src="../assets/img/spot.svg" />
+          <grid :columns="4">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://getspot.com/"
+            >
+              <img
+                alt="Spot Insurance"
+                class="project"
+                src="../assets/img/spot.svg"
+              />
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://pulsarml.com/">
-              <img alt="Pulsar" class="project"
-                src="../assets/img/pulsar.jpg" />
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://pulsarml.com/"
+            >
+              <img
+                alt="Pulsar"
+                class="project"
+                src="../assets/img/pulsar.jpg"
+              />
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://valiu.com/">
-              <img alt="Valiu" class="project"
-                src="../assets/img/valiu.svg" />
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://valiu.com/"
+            >
+              <img alt="Valiu" class="project" src="../assets/img/valiu.svg" />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://bool.js.org/"
+            >
+              <img
+                alt="BoolJS"
+                class="project"
+                src="https://bool.js.org/img/booljs.svg"
+              />
             </a>
           </grid>
         </div>
