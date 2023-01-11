@@ -19,16 +19,6 @@ module.exports = {
     }
   },
   configureWebpack: {
-    plugins: [
-      new GoogleFontsPlugin({
-        fonts: [
-          {
-            family: 'Cormorant',
-            variants: [ '300', '300italic', '400', '400italic' ]
-          }
-        ]
-      })
-    ],
     optimization: {
       minimizer: [
         new TerserPlugin({
