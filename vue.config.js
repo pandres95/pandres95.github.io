@@ -1,4 +1,3 @@
-const GoogleFontsPlugin = require('@beyonk/google-fonts-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
@@ -19,16 +18,6 @@ module.exports = {
     }
   },
   configureWebpack: {
-    plugins: [
-      new GoogleFontsPlugin({
-        fonts: [
-          {
-            family: 'Cormorant',
-            variants: [ '300', '300italic', '400', '400italic' ]
-          }
-        ]
-      })
-    ],
     optimization: {
       minimizer: [
         new TerserPlugin({
