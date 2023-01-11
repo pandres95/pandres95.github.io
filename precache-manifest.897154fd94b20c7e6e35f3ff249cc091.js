@@ -1,78 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "ed6c303786144389b756",
+    "revision": "0365fc65a9f720c1a631",
     "url": "/css/app.5867f7d9.css"
   },
   {
-    "revision": "ed6c303786144389b756",
-    "url": "/js/app.8a04de2d.js"
+    "revision": "0365fc65a9f720c1a631",
+    "url": "/js/app.2fe2998a.js"
   },
   {
     "revision": "d15c36f553019719581c",
     "url": "/js/chunk-vendors.60ab896d.js"
-  },
-  {
-    "url": "/fonts.css"
-  },
-  {
-    "url": "/font/Cormorant-Light.eot"
-  },
-  {
-    "url": "/font/Cormorant-Light.woff"
-  },
-  {
-    "url": "/font/Cormorant-Light.woff2"
-  },
-  {
-    "url": "/font/Cormorant-Light.svg"
-  },
-  {
-    "url": "/font/Cormorant-Light.ttf"
-  },
-  {
-    "url": "/font/Cormorant-Regular.eot"
-  },
-  {
-    "url": "/font/Cormorant-Regular.woff"
-  },
-  {
-    "url": "/font/Cormorant-Regular.woff2"
-  },
-  {
-    "url": "/font/Cormorant-Regular.ttf"
-  },
-  {
-    "url": "/font/Cormorant-LightItalic.eot"
-  },
-  {
-    "url": "/font/Cormorant-LightItalic.woff2"
-  },
-  {
-    "url": "/font/Cormorant-LightItalic.woff"
-  },
-  {
-    "url": "/font/Cormorant-LightItalic.ttf"
-  },
-  {
-    "url": "/font/Cormorant-Italic.eot"
-  },
-  {
-    "url": "/font/Cormorant-Italic.woff"
-  },
-  {
-    "url": "/font/Cormorant-Regular.svg"
-  },
-  {
-    "url": "/font/Cormorant-Italic.woff2"
-  },
-  {
-    "url": "/font/Cormorant-Italic.svg"
-  },
-  {
-    "url": "/font/Cormorant-Italic.ttf"
-  },
-  {
-    "url": "/font/Cormorant-LightItalic.svg"
   },
   {
     "revision": "c0e3e1fa30a4cb1563d5588338b6ca35",
@@ -115,7 +52,7 @@ self.__precacheManifest = [
     "url": "/img/valiu.58b34860.svg"
   },
   {
-    "revision": "dbd82ef3bfdec97cd6a1f52e21441ee7",
+    "revision": "b5edb7be9a29f542547b2f7098405091",
     "url": "/index.html"
   },
   {
