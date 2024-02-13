@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pablo Dorado's CV</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+      body {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 14px;
+        line-height: 1.6;
+        font-weight: 400;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+      }
+      header {
+        text-align: center;
+      }
+      section {
+        margin-bottom: 20px;
+      }
+      .section-title {
+        color: #333;
+        margin: 0 0 10px 0;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #eaeaea;
+      }
+      ul {
+        list-style-type: square;
+      }
+      section > ul {
+        list-style: none;
+        padding: 0;
+      }
+      section > ul > li {
+        margin-bottom: 10px;
+      }
+      ul.horizontal > li {
+        display: inline;
+      }
+      ul.horizontal > li:not(:last-child)::after {
+        content: " |";
+      }
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      section > ul > li > * {
+        margin-block-start: 1em;
+        margin-inline-start: 0.4em;
+      }
+
+      section > ul > li > h3,
+      section > ul > li > date {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0;
+      }
+
+      section aside h4 {
+        margin-block-end: 0.2em;
+        font-weight: 500;
+      }
+
+      kbd {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.9em;
+        background-color: #f6f6f6;
+        font-weight: 200;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Pablo Dorado</h1>
+        <p>Development Researcher | Bogota D.C.</p>
+        <nav>
+          <a href="https://www.linkedin.com/in/pandres95">LinkedIn</a> |
+          <a href="https://pablodorado.com">Personal Website</a> |
+          <a href="https://pablodorado.com/blog">Blog</a>
+        </nav>
+        <p>
+          Email: <a href="mailto:hola@pablodorado.com">hola@pablodorado.com</a>
+        </p>
+      </header>
+      <section>
+        <h2 class="section-title">
+          <span class="material-symbols-outlined"> summarize </span> Summary
+        </h2>
+        <p>
+          A seasoned software development professional with over a decade of
+          experience, I specialize in crafting robust software architectures,
+          streamlining APIs, and pioneering Microservices and DevOps practices.
+          My extensive background is complemented by a keen interest in
+          Blockchain technologies, where I have successfully integrated
+          innovative solutions to enhance product capabilities and operational
+          efficiencies. Recognized for my strategic approach to technology
+          implementation and my commitment to excellence, I continue to lead
+          projects to new heights while mentoring emerging talent in the tech
+          community.
+        </p>
+      </section>
+      <section>
+        <h2 class="section-title">
+          <span class="material-symbols-outlined"> work </span> Professional
+          Experience
+        </h2>
+        <ul>
+          <li>
+            <h3>Virto Network, Senior Runtime Engineer</h3>
+            <date>Aug 2023 - Present</date>
+
+            <p>
+              Leading the development of decentralized services for community
+              self-governance and sustainability, focusing on Blockchain
+              integration for Web3 and dCommerce with a social impact.
+            </p>
+
+            <ul>
+              <li>
+                Design, build and maintain decentralised services to allow
+                communities to operate as Decentralised Autonomous Organizations
+                (a.k.a. DAOs).
+              </li>
+              <li>
+                Help our builders and stakeholders to integrate with our
+                technology, providing consulting services, and custom feature
+                development.
+              </li>
+              <li>
+                Develop and maintain tooling to allow our builders to use our
+                technology.
+              </li>
+            </ul>
+
+            <aside>
+              <h4>
+                <span class="material-symbols-outlined"> star </span> Featured
+                project:
+                <a
+                  href="https://github.com/virto-network/virto-node/tree/master/pallets/communities"
+                >
+                  <kbd>pallet-communities</kbd>
+                </a>
+              </h4>
+
+              A Substrate module to allow organizations create a decentralized
+              governance structure with a sovereign wallet, and mechanisms for
+              rank-based memberships.
+            </aside>
+          </li>
+          <li></li>
+          <li>
+            <h3>Virto Network, Senior Software Engineer</h3>
+            <date>Nov 2022 - Jul 2023</date>
+
+            <p>
+              Contributing on the development of tooling to enable the
+              frictionless access access to Web3 to the masses.
+            </p>
+
+            <ul>
+              <li>
+                Implementation, maintenance and deployment of
+                <kbd>libwallet</kbd>, for a multi-backend (matrix, os, web)
+                <kbd>sr25519</kbd>
+                wallet
+              </li>
+              <li>
+                Contributed on <kbd>scales</kbd>: a lightweight library to
+                handle SCALE-encoded structures with JSON output and support for
+                embedded devices (using <kbd>no-alloc</kbd>).
+              </li>
+              <li>
+                Designed and implemented a base version for <kbd>valor</kbd>, a
+                runtime to execute <i>light-contracts</i> to sync-up off-chain
+                environments with substrate-based chains.
+              </li>
+            </ul>
+
+            <aside>
+              <h4>
+                <span class="material-symbols-outlined"> star </span> Featured
+                project:
+                <a href="https://github.com/virto-network/virto-sdk"
+                  >VirtoSDK</a
+                >
+              </h4>
+
+              A complete toolkit for developing decentralized applications with
+              ease, without worrying about specific details of web3, exposing
+              known <kbd>fetch</kbd>-like interfaces.
+            </aside>
+          </li>
+          <li>
+            <h3>Bloque, Senior Software Engineer</h3>
+            <date>Jun 2022 - Oct 2022</date>
+
+            <p>
+              In an innovative role at Bloque, a company at the forefront of the
+              decentralized economy, I contributed to empowering Latin American
+              businesses through Web3 technologies.
+            </p>
+
+            <ul>
+              <li>
+                Led the design, build, and deployment of critical services,
+                boosting company revenue and enhancing user and customer
+                experiences.
+              </li>
+              <li>
+                Focused on enabling commerce across Latin America to establish
+                online presences efficiently and affordably, aiming to mitigate
+                the effects of regional inflation.
+              </li>
+              <li>
+                Championed the adoption of Web3 technologies, facilitating a
+                more secure and decentralized online selling experience,
+                contributing to the economic empowerment of local businesses.
+              </li>
+            </ul>
+
+            <aside>
+              <h4>
+                <span class="material-symbols-outlined"> star </span> Featured
+                project:
+                <a href="https://github.com/bloque-app/differ">Differ</a>
+              </h4>
+
+              Calculates whether an object has changed, using digest algorithms.
+            </aside>
+          </li>
+          <li>
+            <h3>Spot Insurance, Senior Software Engineer / DevOps Tech Lead</h3>
+            <date>May 2021 - Jun 2022</date>
+
+            <p>
+              In a dynamic role at Spot Insurance, dedicated to promoting a
+              healthy lifestyle through technology and accessible insurance, my
+              contributions were pivotal in shaping the platform's future.
+            </p>
+
+            <ul>
+              <li>
+                Built the foundational infrastructure for the Platform Team,
+                laying the groundwork for future technological developments and
+                supporting the Infrastructure Division's broader objectives.
+              </li>
+              <li>
+                Led projects focused on integrating with external partners,
+                managing the DevOps team, and innovating with new features and
+                improvements to support product development teams.
+              </li>
+              <li>
+                Spearheaded the DevOps strategy, creating a robust
+                infrastructure to support both development and production
+                environments, marking a significant milestone in the company's
+                tech evolution.
+              </li>
+            </ul>
+
+            <aside>
+              <h4>
+                <span class="material-symbols-outlined"> star </span> Featured
+                Project:
+                <a
+                  href="https://github.com/lifebyspot/ts-transform-inject-environment-variables"
+                  ><kbd>ts-transform-inject-environment-variables</kbd></a
+                >
+              </h4>
+
+              Typescript Transformer Plugin to statically inject environment
+              variables. Features transform and knowledge of low-level
+              typescript compiler tooling.
+            </aside>
+          </li>
+          <li>
+            <h3>Valiu, Lead Fullstack Engineer</h3>
+            <date>Aug 2019 - Jun 2020</date>
+
+            <p>
+              In a transformative role at Valiu, a Y Combinator-backed company,
+              I led the technical development to revolutionize banking for Latin
+              America's Venezuelan migration, focusing on remittances and
+              cryptocurrency savings.
+            </p>
+            <ul>
+              <li>
+                <strong
+                  >Designed and implemented a microservices-based
+                  architecture</strong
+                >
+                for Valiu's innovative financial products, significantly
+                advancing the company's technological capabilities.
+              </li>
+              <li>
+                <strong>Spearheaded the adoption of a DevOps culture</strong>,
+                streamlining the development process and enhancing productivity
+                within the team.
+              </li>
+              <li>
+                <strong
+                  >Developed an AML/KYC service utilizing OCR technology and AI
+                  Vision models</strong
+                >, managing the full company infrastructure to secure and
+                optimize financial transactions for the Latin American market.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="section-title">
+          <span class="material-symbols-outlined"> school </span> Education
+        </h2>
+        <ul>
+          <li>
+            <h3>Polkadot Blockchain Academy</h3>
+            <date>Jul 2023 - Aug 2023</date>
+            <p>Computer Programming</p>
+          </li>
+
+          <li>
+            <h3>Universidad Nacional de Colombia</h3>
+            <date>2018</date>
+            <p>Bachelor of Science, Computer Science</p>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="section-title">
+          <span class="material-symbols-outlined"> verified </span> Skills
+        </h2>
+        <ul class="horizontal">
+          <li>Web 3</li>
+          <li>Rust</li>
+          <li>Substrate</li>
+          <li>Software Architecture</li>
+          <li>Microservices</li>
+          <li>DevOps</li>
+        </ul>
+        <ul>
+          <li>I speak English y Español</li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
