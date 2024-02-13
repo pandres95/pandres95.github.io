@@ -1,7 +1,7 @@
 <template>
   <fragment>
     <navigation />
-    <router-view/>
+    <router-view />
   </fragment>
 </template>
 
@@ -51,7 +51,12 @@ body {
   height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Helvetica Neue LT Std', Helvetica, Arial, sans-serif;
 }
 
@@ -76,7 +81,8 @@ h2 {
   line-height: 1.15em;
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
 }
 
@@ -97,11 +103,10 @@ p {
   line-height: calc(0.9em * 1.75);
 }
 
-p + *:not(p) {
+p+*:not(p) {
   margin-top: 1.2em;
 }
 
-p + p {
+p+p {
   margin-top: 0.25em;
-}
-</style>
+}</style>
