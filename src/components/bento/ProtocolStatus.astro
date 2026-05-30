@@ -1,0 +1,59 @@
+---
+import AudioStream from '../widgets/AudioStream.astro';
+
+const nodes = [
+  { name: 'Polkadot Fellowship', badge: 'PROFICIENT MEMBER' },
+  { name: 'Bloque', badge: 'BLOCKCHAIN ARCHITECT' },
+  { name: 'Virto', badge: 'LEAD ENGINEER' },
+];
+
+const skills = ['Rust', 'Substrate', 'Compilers', 'Distributed Systems', 'TypeScript', 'WASM'];
+---
+
+<div
+  class="lg:col-span-4 bg-surface-container-low neobrutal-border neobrutal-shadow rounded-lg p-6 flex flex-col gap-4"
+>
+  <div class="flex items-center justify-between border-b-2 border-outline-variant pb-2">
+    <h2 class="font-mono text-xl font-bold text-on-surface">PROTOCOL_STATUS</h2>
+    <span class="material-symbols-outlined text-primary">memory</span>
+  </div>
+
+  <ul class="flex flex-col gap-4 mt-2">
+    <!-- Nodes cluster -->
+    <li class="flex flex-col gap-1">
+      <span class="font-mono text-xs text-tertiary uppercase tracking-widest">NODES_CLUSTER</span>
+      <div class="flex flex-col gap-2 mt-1">
+        {nodes.map(({ name, badge }) => (
+          <div class="flex items-center justify-between bg-surface-container neobrutal-border p-2 rounded">
+            <span class="font-mono text-sm text-primary">{name}</span>
+            <span class="bg-primary-container text-on-primary-fixed px-1.5 py-0.5 rounded text-[10px] font-bold font-mono whitespace-nowrap ml-2">
+              {badge}
+            </span>
+          </div>
+        ))}
+      </div>
+    </li>
+
+    <!-- Expertise matrix -->
+    <li class="flex flex-col gap-1">
+      <span class="font-mono text-xs text-tertiary uppercase tracking-widest">EXPERTISE_MATRIX</span>
+      <div class="flex flex-wrap gap-2 mt-1">
+        {skills.map((skill) => (
+          <span class="bg-surface-container-highest text-on-surface neobrutal-border neobrutal-shadow-sm px-2 py-1 font-mono text-xs rounded">
+            {skill}
+          </span>
+        ))}
+      </div>
+    </li>
+
+    <!-- Audio stream -->
+    <AudioStream />
+
+    <!-- Uptime -->
+    <li class="flex flex-col gap-1 mt-auto pt-4 border-t-2 border-outline-variant">
+      <span class="font-mono text-xs text-tertiary uppercase tracking-widest">UPTIME</span>
+      <div class="font-mono text-3xl font-bold text-on-surface tracking-tighter">10+ YEARS</div>
+      <span class="text-sm text-on-surface-variant">Systems Engineering</span>
+    </li>
+  </ul>
+</div>

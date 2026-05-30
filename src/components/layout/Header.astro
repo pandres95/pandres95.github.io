@@ -1,0 +1,87 @@
+---
+interface Props {
+  activePage?: 'portfolio' | 'blog' | 'research' | 'cv';
+}
+const { activePage = 'portfolio' } = Astro.props;
+
+const navLinks = [
+  { href: '/', label: 'Portfolio', key: 'portfolio' },
+  { href: '/blog', label: 'Blog', key: 'blog' },
+  { href: '/research', label: 'Research', key: 'research' },
+  { href: '/cv', label: 'CV', key: 'cv' },
+];
+---
+
+<header
+  class="bg-surface sticky top-0 z-50 border-b-2 border-outline-variant shadow-[4px_4px_0px_0px_#000000]"
+>
+  <div class="flex justify-between items-center w-full px-8 py-4 max-w-[1280px] mx-auto">
+    <a
+      href="/"
+      class="font-mono text-xl font-bold tracking-tighter text-primary hover:text-primary-fixed transition-colors"
+    >
+      PABLO_DORADO // PROTOCOL
+    </a>
+
+    <nav class="hidden md:flex gap-6 items-center">
+      {navLinks.map(({ href, label, key }) => (
+        <a
+          href={href}
+          class={[
+            'font-mono text-sm font-semibold uppercase tracking-wide transition-all hover:text-primary hover:translate-x-0.5 hover:translate-y-0.5',
+            activePage === key
+              ? 'text-primary border-b-2 border-primary pb-1'
+              : 'text-on-surface-variant',
+          ].join(' ')}
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <!-- Mobile nav toggle -->
+      <button
+        id="mobile-menu-toggle"
+        aria-label="Toggle menu"
+        class="md:hidden neobrutal-border neobrutal-shadow bg-surface-container-highest p-2 rounded hover:text-primary hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+      >
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+
+      <!-- Terminal toggle -->
+      <button
+        id="terminal-toggle"
+        aria-label="Open terminal"
+        class="neobrutal-border neobrutal-shadow bg-surface-container-highest p-2 rounded hover:text-primary hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+      >
+        <span class="material-symbols-outlined">terminal</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t-2 border-outline-variant bg-surface-container-lowest px-8 py-4">
+    <nav class="flex flex-col gap-3">
+      {navLinks.map(({ href, label, key }) => (
+        <a
+          href={href}
+          class={[
+            'font-mono text-sm font-semibold uppercase tracking-wide py-2 border-b border-outline-variant last:border-0 transition-colors hover:text-primary',
+            activePage === key ? 'text-primary' : 'text-on-surface-variant',
+          ].join(' ')}
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

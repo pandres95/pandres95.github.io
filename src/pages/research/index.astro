@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import CLITerminal from '../../components/widgets/CLITerminal.astro';
+import { getCollection } from 'astro:content';
+
+const publications = (await getCollection('publications')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+---
+
+<BaseLayout
+  title="Research // Pablo Dorado PROTOCOL"
+  description="Academic publications and research by Pablo Dorado — distributed systems, consensus mechanisms, and blockchain architecture."
+>
+  <Header activePage="research" />
+
+  <main class="flex-grow max-w-[1280px] w-full mx-auto px-8 py-8">
+    <div class="mb-8">
+      <h1 class="font-mono text-4xl font-black tracking-tighter text-on-surface uppercase mb-2">
+        RESEARCH_&amp;_PRODUCTION
+      </h1>
+      <p class="text-on-surface-variant text-lg border-l-2 border-primary pl-4">
+        Academic log — distributed systems, compiler theory, and decentralized protocol design.
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      {publications.map(({ slug, data }) => (
+        <article class="bg-surface-container neobrutal-border neobrutal-shadow rounded-lg p-6">
+          <div class="flex justify-between items-start gap-4 mb-3">
+            <h2 class="font-mono text-xl font-bold text-primary leading-tight">
+              {data.url ? (
+                <a href={data.url} target="_blank" rel="noopener noreferrer" class="hover:underline">
+                  {data.title}
+                </a>
+              ) : data.title}
+            </h2>
+            <div class="flex flex-col items-end gap-1 shrink-0">
+              <span class="font-mono text-sm text-tertiary">[{data.date.getFullYear()}]</span>
+              <span class={[
+                'font-mono text-[10px] px-2 py-0.5 rounded neobrutal-border',
+                data.status === 'published'
+                  ? 'bg-primary-container text-on-primary-fixed'
+                  : 'bg-surface-container-highest text-on-surface',
+              ].join(' ')}>
+                {data.status.toUpperCase()}
+              </span>
+            </div>
+          </div>
+          <p class="text-on-surface-variant leading-relaxed mb-4">{data.abstract}</p>
+          <div class="flex flex-wrap gap-2">
+            {data.tags.map((tag) => (
+              <span class="border border-outline px-2 py-0.5 rounded font-mono text-[10px] text-on-surface uppercase">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </main>
+
+  <Footer />
+  <CLITerminal />
+</BaseLayout>

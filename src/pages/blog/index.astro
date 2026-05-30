@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import CLITerminal from '../../components/widgets/CLITerminal.astro';
+import { getGhostPosts } from '../../lib/ghost';
+import { getDevToPosts } from '../../lib/devto';
+
+const [ghostPosts, devtoPosts] = await Promise.all([
+  getGhostPosts(20),
+  getDevToPosts('pandres95', 20),
+]);
+
+interface FeedItem {
+  id: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  url: string;
+  category: 'TECHNICAL' | 'PERSONAL';
+  source: string;
+  tags: string[];
+}
+
+const feed: FeedItem[] = [
+  ...devtoPosts.map((p) => ({
+    id: `devto-${p.id}`,
+    title: p.title,
+    excerpt: p.description,
+    date: p.published_at,
+    url: p.url,
+    category: 'TECHNICAL' as const,
+    source: 'dev.to',
+    tags: p.tag_list,
+  })),
+  ...ghostPosts.map((p) => {
+    const personalTags = ['personal', 'life', 'journal', 'thoughts', 'memories', 'reflexiones'];
+    const isPersonal = p.tags.some((t) => personalTags.includes(t.toLowerCase()));
+    return {
+      id: `ghost-${p.id}`,
+      title: p.title,
+      excerpt: p.excerpt,
+      date: p.date,
+      url: p.url,
+      category: (isPersonal ? 'PERSONAL' : 'TECHNICAL') as 'TECHNICAL' | 'PERSONAL',
+      source: 'Ghost',
+      tags: p.tags,
+    };
+  }),
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+function formatDate(iso: string) {
+  return new Date(iso).toISOString().split('T')[0].replace(/-/g, '.');
+}
+---
+
+<BaseLayout title="Blog // Pablo Dorado PROTOCOL" description="Technical and personal transmissions from Pablo Dorado — Systems Researcher & Blockchain Architect.">
+  <Header activePage="blog" />
+
+  <main class="flex-grow max-w-[1280px] w-full mx-auto px-8 py-8">
+    <div class="mb-8">
+      <h1 class="font-mono text-4xl font-black tracking-tighter text-on-surface uppercase mb-2">
+        TRANSMISSIONS
+      </h1>
+      <p class="text-on-surface-variant text-lg border-l-2 border-primary pl-4">
+        Technical insights and personal notes from the systems frontier.
+      </p>
+    </div>
+
+    {feed.length > 0 ? (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {feed.map(({ title, excerpt, date, url, category, source, tags }) => (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-surface-container neobrutal-border neobrutal-shadow-sm p-4 rounded flex flex-col group hover:-translate-y-0.5 transition-transform"
+          >
+            <div class="flex justify-between items-center mb-3">
+              <span class={[
+                'px-2 py-1 rounded font-mono text-[10px] font-bold neobrutal-border',
+                category === 'TECHNICAL'
+                  ? 'bg-primary-container text-on-primary-fixed'
+                  : 'bg-surface-container-highest text-on-surface',
+              ].join(' ')}>
+                {category}
+              </span>
+              <div class="flex items-center gap-2">
+                <span class="font-mono text-[10px] text-outline border border-outline-variant px-1 py-0.5 rounded">{source}</span>
+                <span class="font-mono text-xs text-tertiary">{formatDate(date)}</span>
+              </div>
+            </div>
+            <h2 class="font-mono text-base font-semibold text-on-surface group-hover:text-primary transition-colors mb-2 leading-snug">
+              {title}
+            </h2>
+            {excerpt && <p class="text-sm text-on-surface-variant flex-grow line-clamp-3">{excerpt}</p>}
+            {tags.length > 0 && (
+              <div class="flex flex-wrap gap-1 mt-3">
+                {tags.slice(0, 3).map((tag) => (
+                  <span class="border border-outline-variant px-1.5 py-0.5 font-mono text-[10px] text-on-surface-variant rounded">{tag}</span>
+                ))}
+              </div>
+            )}
+          </a>
+        ))}
+      </div>
+    ) : (
+      <div class="bg-surface-container neobrutal-border p-8 rounded text-center">
+        <p class="font-mono text-sm text-on-surface-variant">
+          FETCHING_TRANSMISSIONS... Set GHOST_CONTENT_API_KEY to load posts.
+        </p>
+      </div>
+    )}
+  </main>
+
+  <Footer />
+  <CLITerminal />
+</BaseLayout>

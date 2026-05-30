@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+
+  /* Architectural Protocol color palette */
+  --color-background: #0b1326;
+  --color-on-background: #dae2fd;
+
+  --color-surface: #0b1326;
+  --color-surface-dim: #0b1326;
+  --color-surface-bright: #31394d;
+  --color-surface-container-lowest: #060e20;
+  --color-surface-container-low: #131b2e;
+  --color-surface-container: #171f33;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container-highest: #2d3449;
+  --color-on-surface: #dae2fd;
+  --color-on-surface-variant: #bbcabf;
+  --color-inverse-surface: #dae2fd;
+  --color-inverse-on-surface: #283044;
+  --color-surface-tint: #4edea3;
+  --color-surface-variant: #2d3449;
+
+  --color-outline: #86948a;
+  --color-outline-variant: #3c4a42;
+
+  --color-primary: #4edea3;
+  --color-on-primary: #003824;
+  --color-primary-container: #10b981;
+  --color-on-primary-container: #00422b;
+  --color-primary-fixed: #6ffbbe;
+  --color-primary-fixed-dim: #4edea3;
+  --color-on-primary-fixed: #002113;
+  --color-on-primary-fixed-variant: #005236;
+  --color-inverse-primary: #006c49;
+
+  --color-secondary: #d0bcff;
+  --color-on-secondary: #3c0091;
+  --color-secondary-container: #571bc1;
+  --color-on-secondary-container: #c4abff;
+
+  --color-tertiary: #c4c7c9;
+
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+}
+
+/* Neobrutalism utilities */
+@utility neobrutal-border {
+  border: 2px solid #000000;
+}
+
+@utility neobrutal-shadow {
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+@utility neobrutal-shadow-sm {
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+@utility grid-bg {
+  background-image:
+    linear-gradient(to right, #171f33 1px, transparent 1px),
+    linear-gradient(to bottom, #171f33 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Soundbar animation for the audio stream widget */
+@keyframes soundbar {
+  0%   { height: 20%; }
+  100% { height: 100%; }
+}
+
+/* Base */
+html,
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: #0b1326; border-left: 2px solid #3c4a42; }
+::-webkit-scrollbar-thumb { background: #4edea3; border: 2px solid #000000; }
+
+/* Selection */
+::selection { background-color: #4edea3; color: #002113; }

@@ -1,0 +1,158 @@
+---
+---
+
+<dialog
+  id="cli-dialog"
+  class="bg-surface-container-lowest neobrutal-border neobrutal-shadow rounded-lg w-full max-w-2xl m-auto p-0 overflow-hidden open:flex open:flex-col"
+  style="max-height: min(560px, 80vh); backdrop-color: transparent;"
+>
+  <!-- Title bar -->
+  <div class="flex items-center justify-between px-4 py-2 bg-surface-container border-b-2 border-outline-variant shrink-0">
+    <span class="font-mono text-xs text-primary">PABLO_DORADO // PROTOCOL_TERMINAL v1.0</span>
+    <div class="flex items-center gap-3">
+      <button id="cli-clear-btn" type="button" class="text-on-surface-variant hover:text-primary transition-colors font-mono text-xs">CLR</button>
+      <button id="cli-close" type="button" class="text-on-surface-variant hover:text-primary transition-colors font-mono text-xs">[✕]</button>
+    </div>
+  </div>
+
+  <!-- Output -->
+  <div
+    id="cli-output"
+    class="flex-1 overflow-y-auto p-4 font-mono text-sm text-on-surface-variant space-y-1"
+    style="min-height: 200px;"
+  >
+    <p class="text-primary">PROTOCOL TERMINAL — Type <span class="text-on-surface">/help</span> for commands.</p>
+    <p class="text-outline">────────────────────────────────────────</p>
+  </div>
+
+  <!-- Input -->
+  <div class="flex items-center gap-2 px-4 py-3 border-t-2 border-outline-variant bg-surface-container shrink-0">
+    <span class="font-mono text-sm text-primary shrink-0">pandres95@protocol:~$</span>
+    <input
+      id="cli-input"
+      type="text"
+      autocomplete="off"
+      spellcheck="false"
+      placeholder="type a command..."
+      class="flex-1 bg-transparent font-mono text-sm text-on-surface outline-none placeholder:text-outline caret-primary"
+    />
+  </div>
+</dialog>
+
+<style>
+  #cli-dialog::backdrop {
+    background-color: rgba(6, 14, 32, 0.85);
+    backdrop-filter: blur(2px);
+  }
+</style>
+
+<script>
+  const dialog  = document.getElementById('cli-dialog') as HTMLDialogElement;
+  const output  = document.getElementById('cli-output')!;
+  const input   = document.getElementById('cli-input') as HTMLInputElement;
+
+  const BOOT_HTML = [
+    '<p class="text-primary">PROTOCOL TERMINAL — Type <span class="text-on-surface">/help</span> for commands.</p>',
+    '<p class="text-outline">────────────────────────────────────────</p>',
+  ].join('');
+
+  const commands: Record<string, () => string[]> = {
+    '/help': () => [
+      '<span class="text-primary">Available commands:</span>',
+      '  <span class="text-on-surface">/whoami</span>   — identity & bio',
+      '  <span class="text-on-surface">/contact</span>  — contact info',
+      '  <span class="text-on-surface">/cv</span>       — download CV',
+      '  <span class="text-on-surface">/skills</span>   — expertise matrix',
+      '  <span class="text-on-surface">/clear</span>    — clear output',
+      '  <span class="text-on-surface">/exit</span>     — close terminal',
+    ],
+    '/whoami': () => [
+      '<span class="text-primary">IDENTITY_RECORD</span>',
+      '  Name         → Pablo Dorado Suárez',
+      '  Handle       → pandres95',
+      '  Role         → Systems Researcher & Blockchain Architect',
+      '  Affiliation  → Polkadot Fellowship (Proficient Member)',
+      '  Location     → Colombia',
+    ],
+    '/contact': () => [
+      '<span class="text-primary">CONTACT_ENDPOINTS</span>',
+      '  Email    → <a href="mailto:hola@pablodorado.com" class="text-primary hover:underline">hola@pablodorado.com</a>',
+      '  GitHub   → <a href="https://github.com/pandres95" target="_blank" class="text-primary hover:underline">github.com/pandres95</a>',
+      '  LinkedIn → <a href="https://linkedin.com/in/pandres95" target="_blank" class="text-primary hover:underline">linkedin.com/in/pandres95</a>',
+      '  dev.to   → <a href="https://dev.to/pandres95" target="_blank" class="text-primary hover:underline">dev.to/pandres95</a>',
+    ],
+    '/cv': () => {
+      setTimeout(() => window.open('/cv', '_blank'), 300);
+      return ['<span class="text-primary">TRANSMITTING /cv.pdf...</span>', '  Status: DISPATCHED ✓'];
+    },
+    '/skills': () => [
+      '<span class="text-primary">EXPERTISE_MATRIX</span>',
+      '  Languages   → Rust, TypeScript, Python, Haskell',
+      '  Protocols   → Substrate, WASM, Polkadot, XCMP',
+      '  Systems     → Distributed Systems, Compiler Design',
+      '  Tools       → LLVM, Cargo, Node.js, Docker',
+    ],
+    '/clear': () => { output.innerHTML = BOOT_HTML; return []; },
+    '/exit':  () => { dialog.close(); return []; },
+  };
+
+  function printLines(lines: string[]) {
+    for (const line of lines) {
+      const p = document.createElement('p');
+      p.innerHTML = line || '&nbsp;';
+      output.appendChild(p);
+    }
+    output.scrollTop = output.scrollHeight;
+  }
+
+  function run(raw: string) {
+    const echo = document.createElement('p');
+    echo.innerHTML = `<span class="text-primary">$</span> <span class="text-on-surface">${raw}</span>`;
+    output.appendChild(echo);
+
+    const cmd = raw.trim().toLowerCase();
+    if (!cmd) { output.scrollTop = output.scrollHeight; return; }
+
+    if (commands[cmd]) {
+      printLines(commands[cmd]());
+    } else {
+      printLines([
+        `<span class="text-error">command not found: ${cmd}</span>`,
+        'Try <span class="text-on-surface">/help</span>',
+      ]);
+    }
+  }
+
+  // Input — stopPropagation so Enter never bubbles outside the dialog
+  input.addEventListener('keydown', (e) => {
+    e.stopPropagation();
+    if (e.key === 'Enter') {
+      run(input.value);
+      input.value = '';
+    }
+  });
+
+  document.getElementById('cli-close')!.addEventListener('click', () => dialog.close());
+  document.getElementById('cli-clear-btn')!.addEventListener('click', () => { output.innerHTML = BOOT_HTML; });
+
+  // Click on ::backdrop closes dialog
+  dialog.addEventListener('click', (e) => {
+    const rect = dialog.getBoundingClientRect();
+    if (e.clientX < rect.left || e.clientX > rect.right ||
+        e.clientY < rect.top  || e.clientY > rect.bottom) {
+      dialog.close();
+    }
+  });
+
+  function openTerminal() {
+    output.innerHTML = BOOT_HTML;
+    dialog.showModal();
+    requestAnimationFrame(() => input.focus());
+  }
+
+  document.getElementById('terminal-toggle')?.addEventListener('click', openTerminal);
+  document.getElementById('cta-contact')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    openTerminal();
+  });
+</script>

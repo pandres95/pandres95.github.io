@@ -1,0 +1,169 @@
+---
+import { getGhostPosts } from '../../lib/ghost';
+import { getDevToPosts } from '../../lib/devto';
+
+const [ghostPosts, devtoPosts] = await Promise.all([
+  getGhostPosts(6),
+  getDevToPosts('pandres95', 6),
+]);
+
+interface FeedItem {
+  id: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  url: string;
+  category: 'TECHNICAL' | 'PERSONAL';
+  source: 'ghost' | 'devto';
+  tags: string[];
+}
+
+const feed: FeedItem[] = [
+  ...devtoPosts.map((p) => ({
+    id: `devto-${p.id}`,
+    title: p.title,
+    excerpt: p.description,
+    date: p.published_at,
+    url: p.url,
+    category: 'TECHNICAL' as const,
+    source: 'devto' as const,
+    tags: p.tag_list,
+  })),
+  ...ghostPosts.map((p) => {
+    const personalTags = ['personal', 'life', 'journal', 'thoughts', 'memories', 'reflexiones'];
+    const isPersonal = p.tags.some((t) => personalTags.includes(t.toLowerCase()));
+    return {
+      id: `ghost-${p.id}`,
+      title: p.title,
+      excerpt: p.excerpt,
+      date: p.date,
+      url: p.url,
+      category: (isPersonal ? 'PERSONAL' : 'TECHNICAL') as 'TECHNICAL' | 'PERSONAL',
+      source: 'ghost' as const,
+      tags: p.tags,
+    };
+  }),
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 6);
+
+function formatDate(iso: string) {
+  return new Date(iso).toISOString().split('T')[0].replace(/-/g, '.');
+}
+---
+
+<section
+  class="bg-surface-container neobrutal-border neobrutal-shadow rounded-lg p-6"
+  id="transmissions"
+>
+  <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-tertiary">article</span>
+      <h2 class="font-mono text-xl font-bold text-on-surface">TRANSMISSIONS</h2>
+    </div>
+
+    <!-- Tab switcher -->
+    <div
+      class="flex bg-surface-container-highest neobrutal-border p-1 rounded gap-1"
+      id="feed-tabs"
+    >
+      <button
+        data-filter="all"
+        class="bg-primary text-on-primary-fixed neobrutal-border px-4 py-1 font-mono text-xs rounded"
+      >
+        UNIFIED_FEED
+      </button>
+      <button
+        data-filter="TECHNICAL"
+        class="text-on-surface px-4 py-1 font-mono text-xs rounded hover:bg-surface-container transition-colors"
+      >
+        TECHNICAL
+      </button>
+      <button
+        data-filter="PERSONAL"
+        class="text-on-surface px-4 py-1 font-mono text-xs rounded hover:bg-surface-container transition-colors"
+      >
+        PERSONAL
+      </button>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="feed-grid">
+    {feed.length > 0 ? feed.map(({ id, title, excerpt, date, url, category, tags }) => (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-category={category}
+        class="transmission-card bg-surface-container-low neobrutal-border neobrutal-shadow-sm p-4 rounded flex flex-col group hover:-translate-y-0.5 transition-transform"
+      >
+        <div class="flex justify-between items-center mb-3">
+          <span
+            class={[
+              'px-2 py-1 rounded font-mono text-[10px] font-bold neobrutal-border',
+              category === 'TECHNICAL'
+                ? 'bg-primary-container text-on-primary-fixed'
+                : 'bg-surface-container-highest text-on-surface',
+            ].join(' ')}
+          >
+            {category}
+          </span>
+          <span class="font-mono text-xs text-tertiary">{formatDate(date)}</span>
+        </div>
+        <h3 class="font-mono text-base font-semibold text-on-surface group-hover:text-primary transition-colors mb-2 leading-snug">
+          {title}
+        </h3>
+        {excerpt && (
+          <p class="text-sm text-on-surface-variant flex-grow line-clamp-2">{excerpt}</p>
+        )}
+        {tags.length > 0 && (
+          <div class="flex flex-wrap gap-1 mt-3">
+            {tags.slice(0, 3).map((tag) => (
+              <span class="border border-outline-variant px-1.5 py-0.5 font-mono text-[10px] text-on-surface-variant rounded">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </a>
+    )) : (
+      <!-- Placeholder cards shown when no posts are fetched -->
+      <div class="col-span-full text-center py-8">
+        <p class="font-mono text-sm text-on-surface-variant">
+          FETCHING_TRANSMISSIONS... Configure Ghost API key to load posts.
+        </p>
+      </div>
+    )}
+  </div>
+
+  <div class="mt-6 flex justify-center">
+    <a
+      href="/blog"
+      class="bg-surface-container-highest neobrutal-border neobrutal-shadow-sm px-6 py-2 font-mono text-xs text-on-surface uppercase inline-flex items-center gap-2 rounded hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all"
+    >
+      VIEW_ALL_TRANSMISSIONS
+      <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  const tabs = document.querySelectorAll<HTMLButtonElement>('#feed-tabs button');
+  const cards = document.querySelectorAll<HTMLElement>('.transmission-card');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const filter = tab.dataset.filter ?? 'all';
+
+      tabs.forEach((t) => {
+        t.classList.remove('bg-primary', 'text-on-primary-fixed', 'neobrutal-border');
+        t.classList.add('text-on-surface');
+      });
+      tab.classList.add('bg-primary', 'text-on-primary-fixed', 'neobrutal-border');
+      tab.classList.remove('text-on-surface');
+
+      cards.forEach((card) => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+</script>

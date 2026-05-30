@@ -1,0 +1,111 @@
+---
+const username = 'pandres95';
+const apiKey = import.meta.env.PUBLIC_LASTFM_API_KEY ?? '';
+---
+
+<li class="flex flex-col gap-2 pt-4 border-t-2 border-outline-variant" id="audio-stream-widget">
+  <div class="flex items-center justify-between">
+    <span class="font-mono text-xs text-tertiary uppercase tracking-widest flex items-center gap-1">
+      <span class="material-symbols-outlined text-sm">graphic_eq</span>
+      AUDIO_STREAM
+    </span>
+    <span
+      id="audio-status"
+      class="text-[10px] font-bold font-mono text-on-surface-variant uppercase"
+    >
+      LOADING...
+    </span>
+  </div>
+
+  <a
+    id="audio-track"
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="group bg-surface-container neobrutal-border neobrutal-shadow-sm p-2 rounded flex items-center gap-3 hover:border-primary transition-all hover:-translate-y-0.5 cursor-pointer"
+  >
+    <!-- Soundbar animation -->
+    <div class="flex items-end gap-[2px] h-4 w-4 shrink-0" id="soundbar">
+      <div class="w-1 bg-on-surface-variant rounded-t-[1px]" style="height:40%"></div>
+      <div class="w-1 bg-on-surface-variant rounded-t-[1px]" style="height:60%"></div>
+      <div class="w-1 bg-on-surface-variant rounded-t-[1px]" style="height:30%"></div>
+    </div>
+
+    <div class="flex flex-col overflow-hidden min-w-0 flex-grow">
+      <span id="track-name" class="font-mono text-xs text-on-surface truncate group-hover:text-primary transition-colors">
+        —
+      </span>
+      <span id="track-artist" class="font-mono text-[10px] text-on-surface-variant truncate">
+        —
+      </span>
+    </div>
+
+    <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-lg">
+      album
+    </span>
+  </a>
+</li>
+
+<script define:vars={{ username, apiKey }}>
+  const statusEl = document.getElementById('audio-status');
+  const trackName = document.getElementById('track-name');
+  const trackArtist = document.getElementById('track-artist');
+  const trackEl = document.getElementById('audio-track');
+  const soundbarBars = document.querySelectorAll('#soundbar div');
+
+  function animateSoundbars(active) {
+    soundbarBars.forEach((bar, i) => {
+      bar.style.backgroundColor = active ? '#4edea3' : '';
+      if (active) {
+        bar.style.animation = `soundbar ${0.5 + i * 0.3}s ease-in-out infinite alternate`;
+      } else {
+        bar.style.animation = '';
+      }
+    });
+  }
+
+  async function fetchTrack() {
+    if (!apiKey) {
+      statusEl.textContent = 'OFFLINE';
+      trackName.textContent = 'Configure LASTFM key';
+      trackArtist.textContent = '';
+      return;
+    }
+
+    try {
+      const url = new URL('https://ws.audioscrobbler.com/2.0/');
+      url.searchParams.set('method', 'user.getrecenttracks');
+      url.searchParams.set('user', username);
+      url.searchParams.set('api_key', apiKey);
+      url.searchParams.set('format', 'json');
+      url.searchParams.set('limit', '1');
+
+      const res = await fetch(url.toString());
+      if (!res.ok) throw new Error('API error');
+
+      const data = await res.json();
+      const tracks = data.recenttracks?.track;
+      if (!tracks) throw new Error('No tracks');
+
+      const track = Array.isArray(tracks) ? tracks[0] : tracks;
+      const isNowPlaying = track['@attr']?.nowplaying === 'true';
+
+      trackName.textContent = track.name;
+      trackArtist.textContent = track.artist['#text'];
+      statusEl.textContent = isNowPlaying ? 'LIVE' : 'RECENT';
+      statusEl.style.color = isNowPlaying ? '#4edea3' : '';
+      if (isNowPlaying) statusEl.classList.add('animate-pulse');
+      else statusEl.classList.remove('animate-pulse');
+
+      trackEl.href = track.url;
+      animateSoundbars(isNowPlaying);
+    } catch {
+      statusEl.textContent = 'OFFLINE';
+      trackName.textContent = 'Unable to fetch';
+      trackArtist.textContent = '';
+    }
+  }
+
+  fetchTrack();
+  setInterval(fetchTrack, 30_000);
+</script>

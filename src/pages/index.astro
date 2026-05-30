@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import HeroBento from '../components/bento/HeroBento.astro';
+import ProtocolStatus from '../components/bento/ProtocolStatus.astro';
+import Collaborations from '../components/bento/Collaborations.astro';
+import ResearchLog from '../components/bento/ResearchLog.astro';
+import Transmissions from '../components/bento/Transmissions.astro';
+import CLITerminal from '../components/widgets/CLITerminal.astro';
+---
+
+<BaseLayout>
+  <Header activePage="portfolio" />
+
+  <main class="flex-grow max-w-[1280px] w-full mx-auto px-8 py-8 flex flex-col gap-4">
+    <!-- Row 1: Hero + Protocol Status -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+      <HeroBento />
+      <ProtocolStatus />
+    </section>
+
+    <!-- Row 2: Collaborations + Research Log -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+      <Collaborations />
+      <ResearchLog />
+    </section>
+
+    <!-- Row 3: Transmissions -->
+    <Transmissions />
+  </main>
+
+  <Footer />
+  <CLITerminal />
+</BaseLayout>
