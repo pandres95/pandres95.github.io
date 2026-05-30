@@ -1,5 +1,12 @@
 ---
-const collaborations = [
+interface Collaboration {
+  name: string;
+  role: string;
+  href: string | null;
+  description: string;
+}
+
+const collaborations: Collaboration[] = [
   {
     name: 'Bloque',
     role: 'Systems Architecture',
@@ -9,13 +16,13 @@ const collaborations = [
   {
     name: 'Virto Network',
     role: 'Protocol Engineering',
-    href: 'https://virto.network',
+    href: null,
     description: 'Decentralized commerce protocol built on Polkadot',
   },
   {
     name: 'Polkadot Fellowship',
     role: 'Proficient Member',
-    href: 'https://polkadot.network',
+    href: 'https://polkadot-fellows.github.io/dashboard/#/about',
     description: 'Core contributor to the Polkadot protocol governance',
   },
 ];
@@ -30,24 +37,23 @@ const collaborations = [
   </div>
 
   <div class="flex flex-col gap-3">
-    {collaborations.map(({ name, role, href, description }) => (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group bg-surface-container border-2 border-outline-variant p-4 rounded flex items-center justify-between hover:border-primary transition-all hover:translate-x-0.5 hover:translate-y-0.5"
-      >
-        <div>
-          <div class="font-mono text-lg font-bold text-on-surface group-hover:text-primary transition-colors">
-            {name}
+    {collaborations.map(({ name, role, href, description }) => {
+      const cardClass = "group bg-surface-container border-2 border-outline-variant p-4 rounded flex items-center justify-between transition-all hover:translate-x-0.5 hover:translate-y-0.5 " + (href ? "hover:border-primary" : "opacity-60 cursor-default");
+      const inner = (
+        <>
+          <div>
+            <div class="font-mono text-lg font-bold text-on-surface group-hover:text-primary transition-colors">{name}</div>
+            <div class="font-mono text-xs text-on-surface-variant mt-0.5">{role}</div>
+            <div class="text-sm text-on-surface-variant mt-1 hidden group-hover:block">{description}</div>
           </div>
-          <div class="font-mono text-xs text-on-surface-variant mt-0.5">{role}</div>
-          <div class="text-sm text-on-surface-variant mt-1 hidden group-hover:block">{description}</div>
-        </div>
-        <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors shrink-0 ml-3">
-          arrow_forward
-        </span>
-      </a>
-    ))}
+          <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors shrink-0 ml-3">
+            {href ? 'arrow_forward' : 'link_off'}
+          </span>
+        </>
+      );
+      return href
+        ? <a href={href} target="_blank" rel="noopener noreferrer" class={cardClass}>{inner}</a>
+        : <div class={cardClass}>{inner}</div>;
+    })}
   </div>
 </div>
